@@ -1,0 +1,32 @@
+Post::create([
+   'title'=>'Judul Ke delapan',
+   'category_id'=> 3,
+   'slug'=> 'judul-ketujuh',
+   'author'=> 'Lukman',
+   'excerpt'=>'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, accusamus.',
+   'body'=> '<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A quae quos quis deserunt eum commodi necessitatibus officia ducimus maxime ab nihil, cumque libero? Quo illum libero culpa. Animi, ullam. Vitae fuga eum cupiditate quis doloremque, dolorem laborum quos, nesciunt, modi nam voluptatem aperiam sit dicta placeat cumque culpa voluptate esse.</p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, quas at fugit omnis eum facilis perferendis repudiandae iure tempore similique harum sed earum aliquam non amet unde laboriosam error molestias blanditiis. Doloribus nesciunt animi, est laboriosam fugit dicta. Adipisci nulla nobis repellat unde ut dolor natus cupiditate odit labore provident quos, quod magnam quis qui ducimus dolorem nostrum aut ipsa minima consequatur quo? Fugiat tenetur voluptates maxime enim nam eaque, laborum ducimus laudantium officiis vitae voluptas culpa? Neque voluptatem eum aliquid quia! Optio aliquam non quibusdam sint iure, aperiam numquam similique soluta, perferendis maiores totam ducimus veritatis in dignissimos ex consectetur? Illo minus ab aliquam, corporis magnam earum ipsum dolore temporibus quam deserunt ullam odit fuga quod dolor, in est expedita nobis! Eius beatae laborum aut dolor excepturi, itaque, earum, esse quo libero quia tenetur aliquid! Eligendi perspiciatis dolores incidunt harum nisi dolor, nostrum corporis ratione maxime quos itaque aut?</p>'
+
+])
+
+Category::create([
+   'name'=>'Axioo',
+   'slug'=>'axioo'
+])
+
+
+Category::find(3)->update(['name'=>'UI/UX'])
+
+Smartphone::create([
+   'name'=>'Asus',
+   'slug'=>'asus'
+])
+
+Laptop::create([
+   'title'=>'Judul Kedua Axioo',
+   'category_id'=> 9,
+   'slug'=> 'judul-kedua-axioo',
+   'author'=> 'Lukman',
+   'excerpt'=>'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, accusamus.',
+   'body'=> '<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A quae quos quis deserunt eum commodi necessitatibus officia ducimus maxime ab nihil, cumque libero? Quo illum libero culpa. Animi, ullam. Vitae fuga eum cupiditate quis doloremque, dolorem laborum quos, nesciunt, modi nam voluptatem aperiam sit dicta placeat cumque culpa voluptate esse.</p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, quas at fugit omnis eum facilis perferendis repudiandae iure tempore similique harum sed earum aliquam non amet unde laboriosam error molestias blanditiis. Doloribus nesciunt animi, est laboriosam fugit dicta. Adipisci nulla nobis repellat unde ut dolor natus cupiditate odit labore provident quos, quod magnam quis qui ducimus dolorem nostrum aut ipsa minima consequatur quo? Fugiat tenetur voluptates maxime enim nam eaque, laborum ducimus laudantium officiis vitae voluptas culpa? Neque voluptatem eum aliquid quia! Optio aliquam non quibusdam sint iure, aperiam numquam similique soluta, perferendis maiores totam ducimus veritatis in dignissimos ex consectetur? Illo minus ab aliquam, corporis magnam earum ipsum dolore temporibus quam deserunt ullam odit fuga quod dolor, in est expedita nobis! Eius beatae laborum aut dolor excepturi, itaque, earum, esse quo libero quia tenetur aliquid! Eligendi perspiciatis dolores incidunt harum nisi dolor, nostrum corporis ratione maxime quos itaque aut?</p>'
+
+])
