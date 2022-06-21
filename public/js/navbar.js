@@ -66,11 +66,11 @@ const navCont = document.getElementById("navCont");
 function scroll() {
     let calc = window.scrollY; // mendapatkan posisi scroll dari atas ke bawah
     if (calc > 0) { // jika posisi scroll lebih dari 0 pixel
-      navBar.classList.replace("bg-transparent", "bg-nav"); // ganti background navbar
-      navBar.classList.replace("navbar-light", "navbar-info"); // ganti tampilan navbar
+      navBar.classList.replace("bg-navbar", "bg-nav"); // ganti background navbar
+      navBar.classList.replace("navbar-light", "navbar-nav"); // ganti tampilan navbar
       navCont.classList.replace("container-fluid", "container"); // ubah margin pada navbar
     } else if (calc <= 0) { // jika posisi scroll sama dengan 0 pixel
-      navBar.classList.replace("bg-nav", "bg-transparent");
+      navBar.classList.replace("bg-nav", "bg-navbar");
       navBar.classList.replace("navbar-nav", "navbar-light");
       navCont.classList.replace("container", "container-fluid");
     }

@@ -13,7 +13,7 @@
 </head>
 <body>
    <header >
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top py-2" id="navbar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-navbar fixed-top py-2" id="navbar">
          <div class="container-fluid" id="navCont">
             <a href="/" class="navbar-brand">
                <img src="/image/logo/logo-1.png" alt=" " style="width: 10em;">
