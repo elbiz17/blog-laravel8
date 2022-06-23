@@ -21,14 +21,20 @@
             <div class="berita col-md-3 p-3">
                <div class="card-body ">
                   <article>
-                     <h4 ><a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">{{ $post->title }}</a></h4>
-                     <h6>By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></h6>
-                     <p>{{ $post->excerpt }}</p>
-                     <a  href="/news_kamera/{{ $post->slug }}" class="text-decoration-none">
-                        <button class="btn btn-outline-primary icon-link">Read More 
-                           <span class="bi">&rarr;</span> 
-                        </button>
-                     </a>
+                     <div class="py-2" style="height: 60px">
+                        <h4 ><a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">{{ $post->title }}</a></h4>
+                     </div>
+                     <div class="py-2" style="height: 120px">
+                        <h6>By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></h6>
+                        <p>{{ $post->excerpt }}</p>
+                     </div>
+                     <div class="py-2" style="left:0;bottom:0;position:relative">
+                        <a  href="/news_kamera/{{ $post->slug }}" class="text-decoration-none">
+                           <button class="btn btn-outline-primary icon-link">Read More 
+                              <span class="bi">&rarr;</span> 
+                           </button>
+                        </a>
+                     </div>
                   </article>
                </div>
             </div>

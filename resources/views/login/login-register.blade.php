@@ -35,7 +35,7 @@
 </head>
 <body>
    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white  fixed-top py-2">
+      <nav class="navbar navbar-expand-lg navbar-light bg-navbar  fixed-top py-2">
          <div class="container">
             <a href="/" class="navbar-brand">
                <img src="image/NewLogo-2.png" alt=" " style="width: 11em">
@@ -129,11 +129,11 @@
                   <!-- Pills navs -->
                   <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
                      <li class="nav-item" role="presentation">
-                        <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#signIn" role="tab" aria-controls="pills-home" aria-selected="true">Login</a> 
+                        <a class="nav-link active btn__login" id="pills-home-tab" data-toggle="pill" href="#signIn" role="tab" aria-controls="pills-home" aria-selected="true">Login</a> 
    
                      </li>
                      <li class="nav-item" role="presentation">
-                        <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#signUp" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a> 
+                        <a class="nav-link btn__registration" id="pills-profile-tab" data-toggle="pill" href="#signUp" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a> 
    
                      </li>
                   </ul>
@@ -153,7 +153,7 @@
                               <input type="checkbox" name="" id=""> Remember Me 
                            </div>
                            <div class="py-3">
-                              <button class="btn btn-outline-primary form-control">Sign In</button>   
+                              <button class="btn btn-outline-primary form-control ">Sign In</button>   
                            </div>
                        
                         </form>

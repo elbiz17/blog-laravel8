@@ -101,203 +101,211 @@
             </div>
          </div>
       </div>
-      <div class="container py-5">
-         <div class="row">
+      
+      {{-- <div class="container">
+         <div class="row justify-content-center mx-1">
             
                <div class="text-center  mx-auto" style="z-index :1;background-color:#ffffff;width:220px">
                   <h4 class="text-center" style="z-index: 1;">Berita Teknologi</h4>
                </div>
                <hr class="garis">
-               {{-- <div class="garis py-1 bg-light"></div> --}}
-               {{-- <div class="p-3">
-                  <h6>{{ $title }}</h6>
-               </div> --}}
-            @foreach ($posts as $post)
-            <div class="flex berita col-md-3 p-1 ">
-               <div class="contents">
-                  <div class="image">
-                     <a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">
-                        <img src="/image/ipad.jpeg" alt="">
-                     </a>
+     
+            @if ($posts->count())
+            
+            <div class="berita__hero col-md-12  py-2 mb-2" >
+               <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.2);border-top-left-radius:8px;z-index:999">
+                  <a href="/categories/{{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
+                     {{ $posts[0]->category->name }}
+                  </a>
+               </div>
+               <div class="image">
+                  <a class="text-decoration-none" href="/news_kamera/{{ $posts[0]->slug }}">
+                     <img src="https://source.unsplash.com/random/600x200/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
+                  </a>
+               </div>
+               <div class="card-body">
+                  <div class="py-1" style="height:40px">
+
+                     <h5><a class="text-decoration-none" href="/news_kamera/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h5>
                   </div>
-                  <div class="card-body">
-                     <div class="py-1" style="height:40px">
-                        <h5><a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">{{ $post->title }}</a></h5>
-                     </div>
-                     <div class="py-2">
-                        <div class="card-text">
-                           <label style="font-size:0.8em;margin-bottom:5px">By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
-                           <p>{{ $post->excerpt }}</p>
-                        </div>
-                     </div>
-                     {{-- <a  href="/news_kamera/{{ $post->slug }}" class="text-decoration-none">
-                        <button class="btn btn-outline-primary icon-link">Read More 
-                           <span class="bi">&rarr;</span> 
-                        </button>
-                     </a> --}}
-             
-                     
-                     <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
-                        <h6 style="font-size:11px;font-weight:200">update 2 mins ago</h6>
-                     </div>
+                  <div class="py-2">
+                     <p class="card-text">
+                        <small style="font-size:0.8em;margin-bottom:5px">
+                           By : <a class="text-decoration-none" href="/authors/{{ $posts[0]->author->username }}">
+                              {{ $posts[0]->author->name }}</a> in 
+                              <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">
+                              {{ $posts[0]->category->name }}</a> 
+                              <span class="px-2">
+                                 {{ $posts[0]->created_at->diffForHumans() }}
+                              </span>
+                             
+                        </small>
+                              <p>{{ $posts[0]->excerpt }}</p>  
+                     </p>
                   </div>
-            </div>
-            </div>
-            @endforeach
-            {{-- @foreach ($laptops as $laptop)
-            <div class="flex berita col-md-3 p-1 ">
-               <div class="contents">
-                  <div class=" image ">
-                     <a class="text-decoration-none" href="/acer_1/{{ $laptop->slug }}">
-                        <img class="text-center" src="/image/1.png"  alt="">   
-                     </a>
-                  </div>
-                  <div class="card-body">
-                     <div>
-                        <h5><a class="text-decoration-none" href="/acer_1/{{ $laptop->slug }}">{{ $laptop->title }}</a></h5>
-                     </div>
-                     <div class="py-1">
-                        <label  style="font-size:0.8em;margin-bottom:5px">By : <a class="text-decoration-none" href="/authors/{{ $laptop->author->username }}">{{ $laptop->author->name }}</a> in <a class="text-decoration-none" href="/categories_laptop/{{ $laptop->category->slug }}">{{ $laptop->category->name }}</a></label>
-                        <p>{{ $laptop->excerpt }}</p>
-                     </div>
-                
+                  <a  href="/news_kamera/{{ $posts[0]->slug }}" class="text-decoration-none">
+                     <button class="btn btn-outline-primary icon-link">Read More 
+                        <span class="bi">&rarr;</span> 
+                     </button>
+                  </a>
+          
+                  
+                  <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
+                     <h6 style="font-size:11px;font-weight:200">{{ $posts[0]->created_at->diffForHumans() }}</h6>
                   </div>
                </div>
-            </div>
-            @endforeach --}}
-            <div class="loadMore">
-               <a href="#" id="loadMore">Load More</a>
             </div>
 
-            {{-- @foreach ($posts as $post)
-                
-           
-            <div class="berita col-md p-3">
-               <div class="card-body ">
-                  <h4> <a href="news_kamera_2/{{ $post["slug"] }}"></a>{{ $post['title'] }}</h4>
-                  <h6>By : {{ $post["author"] }}</h6>
+            @else
+               <p class="text-center">No post found</p>
 
-                  <p>{{ $post['body'] }}</p>
-                  <button class="btn btn-outline-primary icon-link">Read More 
-                     <span class="bi">&rarr;</span> 
-                  </button>
-               </div>
-               
-            </div>
-            @endforeach --}}
-            {{-- <div class="berita col-md p-3">
-               <div class="card-body ">
-                  <h4>Smartphone dengan kamera 100 MP terbaik tahun 2022</h4>
-                  <p>Magni perspiciatis nihil earum ea veniam possimus, quos minus modi error cupiditate ab nobis voluptatem asperiores debitis! Quia obcaecati unde corporis ab?</p>
-                  <button class="btn btn-outline-primary icon-link">Read More 
-                     <span class="bi">&rarr;</span> 
-                  </button>
-               </div>
-               
-            </div> --}}
-            {{-- <div class="berita col-md p-3">
-               <div class="card-body ">
-                  <h4>Smartphone dengan kamera 100 MP terbaik tahun 2022</h4>
-                  <p>Magni perspiciatis nihil earum ea veniam possimus, quos minus modi error cupiditate ab nobis voluptatem asperiores debitis! Quia obcaecati unde corporis ab?</p>
-                  <button class="btn btn-outline-primary icon-link">Read More 
-                     <span class="bi">&rarr;</span> 
-                  </button>
-               </div>
-               
-            </div>
-            <div class="berita col-md p-3">
-               <div class="card-body ">
-                  <h4>Smartphone dengan kamera 100 MP terbaik tahun 2022</h4>
-                  <p>Magni perspiciatis nihil earum ea veniam possimus, quos minus modi error cupiditate ab nobis voluptatem asperiores debitis! Quia obcaecati unde corporis ab?</p>
-                  <button class="btn btn-outline-primary icon-link">Read More 
-                     <span class="bi">&rarr;</span> 
-                  </button>
-               </div>
-               
-            </div>
-            <div class="berita col-md p-3">
-               <div class="card-body ">
-                  <h4>Smartphone dengan kamera 100 MP terbaik tahun 2022</h4>
-                  <p>Magni perspiciatis nihil earum ea veniam possimus, quos minus modi error cupiditate ab nobis voluptatem asperiores debitis! Quia obcaecati unde corporis ab?</p>
-                  <button class="btn btn-outline-primary icon-link">Read More 
-                     <span class="bi">&rarr;</span> 
-                  </button>
-               </div>
-            </div>
-            <div class="berita col-md p-3">
-               <div class="card-body ">
-                  <h4>Smartphone dengan kamera 100 MP terbaik tahun 2022</h4>
-                  <p>Magni perspiciatis nihil earum ea veniam possimus, quos minus modi error cupiditate ab nobis voluptatem asperiores debitis! Quia obcaecati unde corporis ab?</p>
-                  <button class="btn btn-outline-primary icon-link">Read More 
-                     <span class="bi">&rarr;</span> 
-                  </button>
-               </div>
-            </div>
-            <div class="berita col-md p-3">
-               <div class="card-body ">
-                  <h4>Smartphone dengan kamera 100 MP terbaik tahun 2022</h4>
-                  <p>Magni perspiciatis nihil earum ea veniam possimus, quos minus modi error cupiditate ab nobis voluptatem asperiores debitis! Quia obcaecati unde corporis ab?</p>
-                  <button class="btn btn-outline-primary icon-link">Read More 
-                     <span class="bi">&rarr;</span> 
-                  </button>
-               </div>
-            </div>
-            <div class="berita col-md p-3">
-               <div class="card-body ">
-                  <h4>Smartphone dengan kamera 100 MP terbaik tahun 2022</h4>
-                  <p>Magni perspiciatis nihil earum ea veniam possimus, quos minus modi error cupiditate ab nobis voluptatem asperiores debitis! Quia obcaecati unde corporis ab?</p>
-                  <button class="btn btn-outline-primary icon-link">Read More 
-                     <span class="bi">&rarr;</span> 
-                  </button>
-               </div>
-            </div> --}}
-            {{-- <a href="#" class="py-3 px-4">Lainnya...</a> --}}
-         </div>
+            @endif
 
-      </div>
-      {{-- <div class="container">
-         <div class="row justify-content-center">
-            <div class="text-center">
-               <h4 class="py-4">Review</h4>
-            </div>
-            <div class="col-md-3 review">
-               <img src="image/burung.jpg" alt="" >
-               <div class="card-body caption">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo cupiditate perspiciatis reiciendis doloremque nostrum consequuntur iure assumenda exercitationem cumque dolor quo nesciunt repellendus sed, molestiae vitae beatae aperiam at perferendis?</p>
-               </div>
-            </div>
-            <div class="col-md-3 review">
-               <img src="image/burung.jpg" alt="" >
-               <div class="card-body caption">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo cupiditate perspiciatis reiciendis doloremque nostrum consequuntur iure assumenda exercitationem cumque dolor quo nesciunt repellendus sed, molestiae vitae beatae aperiam at perferendis?</p>
-               </div>
-            </div>
-            <div class="col-md-3 review">
-               <img src="image/burung.jpg" alt="" >
-               <div class="card-body caption">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo cupiditate perspiciatis reiciendis doloremque nostrum consequuntur iure assumenda exercitationem cumque dolor quo nesciunt repellendus sed, molestiae vitae beatae aperiam at perferendis?</p>
-               </div>
-            </div>
-            <div class="col-md-3 review">
-               <img src="image/burung.jpg" alt="" >
-               <div class="card-body caption">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo cupiditate perspiciatis reiciendis doloremque nostrum consequuntur iure assumenda exercitationem cumque dolor quo nesciunt repellendus sed, molestiae vitae beatae aperiam at perferendis?</p>
-               </div>
-            </div>
-            <div class="col-md-3 review">
-               <img src="image/burung.jpg" alt="" >
-               <div class="card-body caption">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo cupiditate perspiciatis reiciendis doloremque nostrum consequuntur iure assumenda exercitationem cumque dolor quo nesciunt repellendus sed, molestiae vitae beatae aperiam at perferendis?</p>
-               </div>
-            </div>
-            <div class="col-md-3 review">
-               <img src="image/burung.jpg" alt="" >
-               <div class="card-body caption">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo cupiditate perspiciatis reiciendis doloremque nostrum consequuntur iure assumenda exercitationem cumque dolor quo nesciunt repellendus sed, molestiae vitae beatae aperiam at perferendis?</p>
-               </div>
-            </div>
+    
+
+         
          </div>
       </div> --}}
+
+      {{-- <div class="container">
+
+         <div class="row d-flex justify-content-center mx-1">
+  
+
+               @foreach ($posts->skip(1) as $post)
+               <div class="flex berita col-md-3 py-2 mb-2 ">
+                  <div class="contents ">
+                     <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.3);border-top-left-radius:8px;z-index:999">
+                        <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none text-white">
+                           {{ $post->category->name }}
+                        </a>
+                     </div>
+                     <div class="image">
+                        <a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">
+                           <img src="https://source.unsplash.com/random/320x150/?{{ $post->category->name }}" alt="">
+                        </a>
+                     </div>
+                     <div class="card-body">
+                        <div class="py-1" style="height:40px">
+                           <h5><a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">{{ $post->title }}</a></h5>
+                        </div>
+                        <div class="py-1" style="min-height: 8rem">
+                           <div class="card-text">
+                              <label style="font-size:0.8em;margin-bottom:5px">By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
+                              <p style="font-size:1em;">{{ $post->excerpt }}</p>
+                           </div>
+                        </div>
+                        <a  href="/news_kamera/{{ $post->slug }}" class="text-decoration-none">
+                           <button class="btn btn-outline-primary icon-link">Read More 
+                              <span class="bi">&rarr;</span> 
+                           </button>
+                        </a>
+                
+                        
+                        <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
+                           <h6 style="font-size:9px;font-weight:100">{{ $post->created_at->diffForHumans() }}</h6>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               @endforeach
+           
+               <div class="loadMore">
+                  <a href="#" id="loadMore">Load More</a>
+               </div>
+         
+         </div>
+      </div> --}}
+
+      <div class="container py-2">
+         <div class="row">
+            @if ($posts->count())
+             <div class="col-md-12">
+                 <div class="berita__hero">
+                  <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.2);border-top-left-radius:8px;z-index:999">
+                     <a href="/categories/{{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
+                        {{ $posts[0]->category->name }}
+                     </a>
+                  </div>
+                  <div class="image">
+                     <a class="text-decoration-none" href="/news_kamera/{{ $posts[0]->slug }}">
+                        <img src="https://source.unsplash.com/random/600x400/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
+                     </a>
+                  </div>
+                    
+                  <div class="card-body">
+                     <h5 class="card-title" style="height: 40px">{{ $posts[0]->title }}</h5>
+                     <div class="card-text" style="min-height: 4rem">
+                        <label style="font-size:0.8em;margin-bottom:5px">By :
+                            <a class="text-decoration-none" href="/authors/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
+                            <span class="px-2">
+                              {{ $posts[0]->created_at->diffForHumans() }}
+                           </span>
+                        </label>
+                       
+                       
+                        <p>
+                           {{ $posts[0]->excerpt }}
+                        </p>
+                     </div>
+                     <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
+                        <h6 style="font-size:9px;font-weight:100">{{ $posts[0]->created_at->diffForHumans() }}</h6>
+                     </div>
+                     <a href="/news_kamera/{{ $posts[0]->slug }}" class="btn btn-outline-primary icon-link">Read More 
+                        <span class="bi">&rarr;</span> 
+                     </a>
+                  </div>
+                 </div>
+             </div>
+             @else 
+               <p class="text-center">No post found</p>
+             @endif
+         </div>
+     </div>
+     <div class="container">
+         <div class="row">
+             @foreach ($posts->skip(1) as $post)
+               <div class="col-md-4 py-2">
+                  <div class="berita flex" style="height: auto">
+                     <div class="contents">
+                        <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.3);border-top-left-radius:8px;z-index:999">
+                           <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none text-white">
+                              {{ $post->category->name }}
+                           </a>
+                        </div>
+                        <div class="image">
+                           <a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">
+                              <img src="https://source.unsplash.com/random/320x150/?{{ $post->category->name }}" alt="">
+                           </a>
+                        </div>
+                        <div class="card-body">
+                           <h5 class="card-title" style="height: 40px">{{ $post->title }}</h5>
+                           <div class="card-text" style="min-height: 8rem">
+                              <label style="font-size:0.8em;margin-bottom:5px">By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
+                        
+                              <p>
+                                 {{ $post->excerpt }}
+                              </p>
+                           </div>
+                           <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
+                              <h6 style="font-size:9px;font-weight:100">{{ $post->created_at->diffForHumans() }}</h6>
+                           </div>
+                           <a href="/news_kamera/{{ $post->slug }}" class="btn btn-outline-primary icon-link">Read More 
+                              <span class="bi">&rarr;</span> 
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+                 
+             @endforeach
+             <div class="loadMore">
+               <a href="#" id="loadMore">Load More</a>
+            </div>
+ 
+         </div>
+     </div>
+   
       
    </main>
 

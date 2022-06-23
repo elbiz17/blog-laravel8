@@ -14,7 +14,8 @@ class PagesController extends Controller
         return view('home',[
             'title'=>'Home',
             // "posts"=>Post::all()
-            "posts"=>Post::with(['author', 'category'])->latest()->get(),
+            // "posts"=>Post::with(['author', 'category'])->latest()->get()
+            "posts"=>Post::latest()->get()
 
         ]);
     }

@@ -17,10 +17,11 @@ class PostFactory extends Factory
             //
             'title'=> $this->faker->sentence(mt_rand(2,8)),
             'slug'=> $this->faker->slug(),
-            'excerpt'=>$this->faker->paragraph(mt_rand(1,2)),
+            'excerpt'=>$this->faker->paragraph(mt_rand(1,1)),
             'body'=>$this->faker->paragraph(mt_rand(5,10)),
             'user_id'=>mt_rand(1,3),
-            'category_id'=>mt_rand(1,6)
+            'category_id'=>mt_rand(1,6),
+           
         ];
     }
 }

@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
             'slug'=>'laptop-axioo'
         ]); 
 
-        Post::factory(10)->create();
+        Post::factory(6)->create();
 
         // Post::create([
         //     'title'=>'Judul Pertama',
