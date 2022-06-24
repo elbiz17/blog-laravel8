@@ -906,12 +906,15 @@ and (max-width:1199px)
 
 .news .image img{
    width: 100%;
+
     
 }
 .news .image{
    width: 100%;
    overflow: hidden;    
    display: inline-block;  
+   border-top-left-radius: 8px;
+   border-top-right-radius: 8px;
 }
 .news h5{
    font-family: 'Titillium Web', sans-serif;
