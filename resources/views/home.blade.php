@@ -3,10 +3,11 @@
 @section('konten')
 
 
-   <section class="hero d-flex align-items-center justify-content-center ">
+   <section class="hero d-flex align-items-end justify-content-center ">
+   {{-- <section class="hero "> --}}
       <div class="container">
-         {{-- flex-column-reverse flex-md-row --}}
-         <div class="row hero-bg justify-content-center">
+         
+         {{-- <div class="row hero-bg justify-content-center">
             <div class="hero-text col-md-6 pt-5">
                <div class="row " style="bottom:0">
                   <div class="col-md py-3">
@@ -32,12 +33,54 @@
                </div>
             </div>
             <div class="hero-model col-md-6 d-none d-md-block pt-2">
-               <div class="hero-img">
-                  <img src="/image/model/model.png" alt=""  >
+               <div class="hero-img" >
+                  <img class="img-fluid" src="/image/model/model.png" alt=""  >
 
                </div>
             </div>
+         </div> --}}
+
+         <div class="row hero" style="">
+            <div class="col-md-6 align-self-center" >
+               <div class="row justify-content-center">
+                  <div class="col-md pt-5">
+                     <div class="hero__img pt-5">
+                        <img class="img-fluid" src="image/hero-img.png" alt=""  width="100%">
+                        
+                     </div>
+                  </div>
+          
+               </div>
+               <div class="row">
+                  <div class="col-md py-3">
+                     <div class="card-text">
+                        <h4 class="display-5 fw-bolder">Selamat Datang</h4>
+                        <p class style="text-align:justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam facere voluptatibus nemo, eaque unde dicta perspiciatis qui voluptatum laboriosam. Soluta vero officiis eaque numquam aut accusamus culpa eius, placeat dolore?</p>  
+                        <div class="readMore">
+                           <a href="#konten" class="text-decoration-none">
+                              <button class="btn btn-outline-light icon-link  ">Get Started 
+                                 <span class="bi">&rarr;</span> 
+                              </button>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 align-self-end">
+               <div class="row">
+                  <div class="model__img d-none d-md-block " >
+                     <img class="img-fluid" src="/image/model/model.png" alt="" style="" width="100%">
+      
+                  </div>
+               </div>
+            </div>
          </div>
+
+     
+
+
+      
   
       
       </div>
