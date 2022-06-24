@@ -52,6 +52,9 @@
                      </div>
                   </li>
                   <li class="nav-item ">
+                     <a href="/categories" class="nav-link {{ ($title === "Categories") ? 'active' : '' }}">Kategori</a>
+                  </li>
+                  <li class="nav-item ">
                      <a href="/tutorial" class="nav-link {{ ($title === "Tutorial") ? 'active' : '' }}">Tutorial</a>
                   </li>
           

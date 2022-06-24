@@ -12,17 +12,13 @@
                   <p>by : {{ $post->author->name }} in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a> </p>
                </div>
                <div class="card-body ">
-                  <p style="text-align: justify">Tablet HUAWEI MatePad Diluncurkan 12 April 2022, Tawarkan Pengalaman Komputasi Setara Laptop - Semakin dinamisnya kehidupan modern saat ini mendorong banyak orang untuk lebih tangkas dalam beraktivitas di mana saja dan kapan saja. Oleh karenanya, dibutuhkan lebih dari sekadar perangkat yang mampu mengakomodir berbagai skenario secara efisien, namun juga nyaman dan ergonomis untuk dibawa ke mana saja. Tablet menjadi jawaban terbaik untuk kebutuhan tersebut, di mana tablet kini mampu menjadi pengganti laptop.
-      
-                     Menyempurnakan fungsinya, HUAWEI MatePad sebagai tablet generasi terbaru yang fungsional dan nyaman untuk menunjang produktivitas. Tablet ini ditenagai oleh sistem operasi HarmonyOS serta berbagai kemampuan dan fitur layaknya laptop yang kian melengkapi fleksibilitas komputasi pada integrasi Smart Office Huawei, termasuk dukungan akan keyboard dan pen yang bisa didapat dalam paket pembelian semasa Pre-Order. Tablet ini akan memasuki pasar Indonesia pada 12 April 2022 mendatang.
-                  </p>
                   <div class="text-center">
-                     <img src="/image/phone-108.jpg" alt="" width="100%">
+                     <img class="img-fluid" src="https://source.unsplash.com/random/600x400/?{{ $post->category->name }}" alt="{{ $post->category->name }}" alt="" width="100%">
                   </div>
-                  <p class="py-2">
+                  <p style="text-align: justify">
                      {!! $post->body !!}
-                     
                   </p>
+             
                </div>
             </div>
          </div>
