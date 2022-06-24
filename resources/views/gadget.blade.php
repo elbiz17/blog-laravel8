@@ -17,7 +17,7 @@
                   <div class="news-wrap">
                      <a href="postGadget/{{ $post->slug }}" class="text-decoration-none text-black">
                         <div class="image">
-                           <img src="image/gadget/ipad-pro.jpeg" alt="" >
+                           <img src="https://source.unsplash.com/random/600x400/?{{ $post->category->name }}" alt="{{ $post->category->name }}" alt="" >
                         </div>
                         <div class="card-body">
                            <div class="py-2">
