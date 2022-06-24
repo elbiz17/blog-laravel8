@@ -4,7 +4,7 @@
 
 
    <section class="hero d-flex align-items-end justify-content-center ">
-   {{-- <section class="hero "> --}}
+
       <div class="container">
          
          {{-- <div class="row hero-bg justify-content-center">
@@ -56,7 +56,7 @@
                      <div class="card-text">
                         <h4 class="display-5 fw-bolder">Selamat Datang</h4>
                         <p class style="text-align:justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam facere voluptatibus nemo, eaque unde dicta perspiciatis qui voluptatum laboriosam. Soluta vero officiis eaque numquam aut accusamus culpa eius, placeat dolore?</p>  
-                        <div class="readMore py-2">
+                        <div class="readMore pb-3">
                            <a href="#konten" class="text-decoration-none">
                               <button class="btn btn-outline-light icon-link  ">Get Started 
                                  <span class="bi">&rarr;</span> 
@@ -85,6 +85,32 @@
       
       </div>
       
+   </section>
+   <section class="banner">
+      <div class="container">
+         <div class="row  row-cols-3  d-flex" style="position: relative;top:-15px">
+            <div class="col-md ">
+               <div class="bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
+                  <img class="img-fluid" src="/image/logo/logo-asus.png" alt="" style="width: 13em;height:4em;min-height:100%">
+                  {{-- <p class="text-center"style="font-size:0.75em">ASUS</p> --}}
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
+                  {{-- <p class="text-center" style="font-size:0.75em">Xiaomi</p> --}}
+                  <img class="img-fluid" src="/image/logo/logo-xiaomi.png" alt="" style="width: 100%;height:4em;min-height:100%">
+
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
+                  {{-- <p class="text-center" style="font-size:0.75em">Samsung</p> --}}
+                  <img class="img-fluid" src="/image/logo/logo-samsung.png" alt="" style="width: 100%;height:4em;min-height:100%">
+
+               </div>
+            </div>
+         </div>
+      </div>
    </section>
 
    <main class="content py-5" id="konten">
