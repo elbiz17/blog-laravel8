@@ -41,22 +41,22 @@
          </div> --}}
 
          <div class="row hero" style="">
-            <div class="col-md-6 align-self-center" >
-               <div class="row justify-content-center">
-                  <div class="col-md pt-5">
+            <div class="col-md-7 align-self-center justify-content-center" >
+               <div class="row">
+                  <div class="col-md pt-5 ">
                      <div class="hero__img pt-5">
-                        <img class="img-fluid" src="image/hero-img.png" alt=""  width="100%">
+                        <img class="img-fluid" src="image/hero-img.png" alt="" style="height:12rem;max-width:22rem" width="100%">
                         
                      </div>
                   </div>
           
                </div>
-               <div class="row">
-                  <div class="col-md py-3">
+               <div class="row ">
+                  <div class="col-md ">
                      <div class="card-text">
                         <h4 class="display-5 fw-bolder">Selamat Datang</h4>
                         <p class style="text-align:justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam facere voluptatibus nemo, eaque unde dicta perspiciatis qui voluptatum laboriosam. Soluta vero officiis eaque numquam aut accusamus culpa eius, placeat dolore?</p>  
-                        <div class="readMore">
+                        <div class="readMore py-2">
                            <a href="#konten" class="text-decoration-none">
                               <button class="btn btn-outline-light icon-link  ">Get Started 
                                  <span class="bi">&rarr;</span> 
@@ -67,10 +67,10 @@
                   </div>
                </div>
             </div>
-            <div class="col-md-6 align-self-end">
-               <div class="row">
-                  <div class="model__img d-none d-md-block " >
-                     <img class="img-fluid" src="/image/model/model.png" alt="" style="" width="100%">
+            <div class="col-md-5 model__cover bg-white  align-self-end">
+               <div class="row text-center ">
+                  <div class="model__img   d-none d-md-block " >
+                     <img class="img-fluid " src="/image/model/model.png" alt="" style="" width="100%">
       
                   </div>
                </div>
@@ -95,10 +95,11 @@
                <h5 class="text-primary ">Who We Are</h5>
                <h4 class="fs-3" style="color: #012970; text-align:justify">Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti reprehenderit</h4>
                <p class="display-8" style="text-align:justify;">Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corruption.</p>
-             
-               <button class="btn btn-primary fs-6 icon-link">Read More 
-                  <span class="bi">&rArr;</span> 
-               </button>
+               <div class="">
+                  <button class="btn btn-outline-primary fs-6 icon-link">Read More 
+                     <span class="bi">&rArr;</span> 
+                  </button>
+               </div>
             </div>
             <div class="columns ">
                <img class="" src="image/about.jpg" alt="" >

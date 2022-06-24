@@ -281,6 +281,7 @@ nav ul li a{
    height:620px;
 
    min-width: 100%;
+   background: #03a9f4;
 }
 
 
@@ -463,11 +464,24 @@ nav ul li a{
    height:12rem;
    max-width:22rem;
 }
+/* .hero__img{
+
+   clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+} */
 
 .model__img img{
-   height: 25rem;
-   min-width:25rem;
+   height: 27rem;
+   width:26rem;
+   
 }
+.model__cover{
+
+   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+
+
+}
+
+
 
 /* end of portrait */
 
@@ -517,7 +531,7 @@ nav ul li a{
    align-items: center;
  }
  .icon-link > .bi {
-   margin-top: .125rem;
+   margin-top: .100rem;
    margin-left: .125rem;
    transition: transform .25s ease-in-out;
    fill: currentColor;
