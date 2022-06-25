@@ -13,11 +13,13 @@
                </div>
                <div class="card-body ">
                   <div class="text-center">
-                     <img class="img-fluid" src="https://source.unsplash.com/random/600x400/?{{ $post->category->name }}" alt="{{ $post->category->name }}" alt="" width="100%">
+                     <img class="img-fluid" src="https://source.unsplash.com/random/1200x600/?{{ $post->category->name }}" alt="{{ $post->category->name }}" alt="" width="100%">
                   </div>
-                  <p style="text-align: justify">
-                     {!! $post->body !!}
-                  </p>
+                  {{-- <p style="text-align: justify"> --}}
+                     <article class="my-3" style="text-align:justify">
+                        {!! $post->body !!}
+                     </article>
+                  {{-- </p> --}}
              
                </div>
             </div>

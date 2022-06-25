@@ -13,6 +13,7 @@ class PagesController extends Controller
     public function index(){
         return view('home',[
             'title'=>'Home',
+            'active'=> 'home',
             // "posts"=>Post::all()
             // "posts"=>Post::with(['author', 'category'])->latest()->get()
             "posts"=>Post::latest()->get()
@@ -31,6 +32,7 @@ class PagesController extends Controller
     public function news(){
         return view("news",[
             "title" => "News",
+            'active'=>'news',
             'posts'=>Post::all()
            
         ]);
@@ -46,6 +48,7 @@ class PagesController extends Controller
     public function smartphone(){
         return view("smartphone",[
             "title" => "Smartphone ",
+            'active'=>'smartphone',
             'posts'=>Post::latest()->get()
         ]);
     }
@@ -54,6 +57,7 @@ class PagesController extends Controller
     public function postSmartphone(Post $post){
         return view("smartphone/show/show",[
             "title" => "Smartphone",
+            'active'=>'smartphone',
             "post"=>$post
         ]);
     }
@@ -93,12 +97,14 @@ class PagesController extends Controller
     public function gadget(){
         return view("gadget",[
             "title"=>"Gadget",
+            'active'=>'gadget',
             'posts'=>Post::all()
         ]);
     }
     public function postGadget(Post $post){
         return view("gadget/show/postGadget",[
             "title"=>"Gadget",
+            'active'=>'gadget',
             "post"=>$post
         ]);
     }
@@ -106,7 +112,8 @@ class PagesController extends Controller
     // controller pages tutorial
     public function tutorial(){
         return view('tutorial',[
-            "title"=>"Tutorial"
+            "title"=>"Tutorial",
+            'active'=>'tutorial'
         ]);
     }
     public function baterai_hp(){
@@ -178,12 +185,14 @@ class PagesController extends Controller
     public function categories(){
         return view('category.categories',[
             'title'=>'Post Categories',
+            'active'=>'categories',
             'categories'=>Category::all()
         ]);
     }
     public function category(Category $category){
         return view('smartphone', [
             'title'=>$category->name,
+            'active'=>'categories',
             'posts'=>$category->posts,
             'category'=>$category->name
          ]);

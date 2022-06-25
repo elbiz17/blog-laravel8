@@ -26,11 +26,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav px-2 d-flex justify-content-center" style="flex:1;">
                   <li class="nav-item ">
-                     <a href="/news" class="nav-link {{ ($title === "News") ? 'active' : '' }}">News</a>
+                     <a href="/news" class="nav-link {{ ($active === "news") ? 'active' : '' }}">News</a>
                   </li>
                   <li class="nav-item  btn-group dropdown">
                     
-                     <a href="" class="nav-link dropdown-toggle {{ ($title === "Smartphone") ? 'active' : '' }}" data-bs-toggle="dropdown">Smartphone</a>
+                     <a href="" class="nav-link dropdown-toggle {{ ($active === "smartphone") ? 'active' : '' }}" data-bs-toggle="dropdown">Smartphone</a>
                      <div class="dropdown-menu">
                         <a href="/categories/asus" class="dropdown-item">Asus</a>
                         <a href="/categories/xiaomi" class="dropdown-item">Xiaomi</a>
@@ -40,10 +40,10 @@
                      </div>
                   </li>
                   <li class="nav-item ">
-                     <a href="/gadget" class="nav-link {{ ($title === "Gadget") ? 'active' : '' }}">Gadget</a>
+                     <a href="/gadget" class="nav-link {{ ($active === "gadget") ? 'active' : '' }}">Gadget</a>
                   </li>
                   <li class="nav-item  dropdown">
-                     <a href="" class="nav-link dropdown-toggle {{ ($title === "Laptop") ? 'active' : '' }}" data-bs-toggle="dropdown">Laptop</a>
+                     <a href="" class="nav-link dropdown-toggle {{ ($active === "laptop") ? 'active' : '' }}" data-bs-toggle="dropdown">Laptop</a>
                      <div class="dropdown-menu">
                         <a href="/categories/laptop-acer" class="dropdown-item">Acer</a>
                         <a href="/categories/laptop-asus" class="dropdown-item">Asus</a>
@@ -52,14 +52,14 @@
                      </div>
                   </li>
                   <li class="nav-item ">
-                     <a href="/categories" class="nav-link {{ ($title === "Categories") ? 'active' : '' }}">Kategori</a>
+                     <a href="/categories" class="nav-link {{ ($active === "categories") ? 'active' : '' }}">Kategori</a>
                   </li>
                   <li class="nav-item ">
-                     <a href="/tutorial" class="nav-link {{ ($title === "Tutorial") ? 'active' : '' }}">Tutorial</a>
+                     <a href="/tutorial" class="nav-link {{ ($active === "tutorial") ? 'active' : '' }}">Tutorial</a>
                   </li>
           
                   <li class="nav-item  dropdown">
-                     <a href="#" class="nav-link dropdown-toggle {{ ($title === "About") ? 'active' : '' }}" data-bs-toggle="dropdown">About</a>
+                     <a href="#" class="nav-link dropdown-toggle {{ ($active === "about") ? 'active' : '' }}" data-bs-toggle="dropdown">About</a>
                      <div class="dropdown-menu">
                          <a href="/about_us" class="dropdown-item">Tentang Kami</a>
                          <a href="#" class="dropdown-item">Kerja Sama</a>
@@ -74,7 +74,7 @@
                </ul>
                <ul class="navbar-nav ms-auto px-2">
                   <li class="nav-item">
-                     <a href="/login-register" class="nav-link {{ ($title === "Login") ? 'active' : '' }}">
+                     <a href="/login-register" class="nav-link {{ ($active === "login") ? 'active' : '' }}">
                         <i class="fa-solid fa-user "></i>
                         Masuk
                      </a>
