@@ -65,13 +65,13 @@ const navCont = document.getElementById("navCont");
 
 function scroll() {
     let calc = window.scrollY; // mendapatkan posisi scroll dari atas ke bawah
-    if (calc > 0) { // jika posisi scroll lebih dari 0 pixel
+    if (calc > 500) { // jika posisi scroll lebih dari 0 pixel
       navBar.classList.replace("bg-navbar", "bg-nav"); // ganti background navbar
-      navBar.classList.replace("navbar-light", "navbar-nav"); // ganti tampilan navbar
+      navBar.classList.replace("navbar-dark", "navbar-light"); // ganti tampilan navbar
       navCont.classList.replace("container-fluid", "container"); // ubah margin pada navbar
     } else if (calc <= 0) { // jika posisi scroll sama dengan 0 pixel
       navBar.classList.replace("bg-nav", "bg-navbar");
-      navBar.classList.replace("navbar-nav", "navbar-light");
+      navBar.classList.replace("navbar-light", "navbar-dark");
       navCont.classList.replace("container", "container-fluid");
     }
   }
@@ -83,3 +83,11 @@ scroll();
 window.onscroll = () => { // jika tidak work untuk arrow function, coba pakai function biasa
   scroll();
 };
+
+
+$(document).ready(function(){
+  $('.navbar-nav').on('click', 'a', function(){
+    $('.navbar-nav a.active').removeClass('active');
+    $(this).addClass('active');
+  });
+});

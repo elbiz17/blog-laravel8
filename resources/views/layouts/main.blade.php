@@ -12,8 +12,8 @@
    <title>Review Gadget | {{ $title }}</title>
 </head>
 <body>
-   <header id="navbar">
-      <nav class="navbar navbar-expand-lg navbar-light bg-navbar fixed-top py-2" >
+   <header >
+      <nav class="navbar navbar-expand-lg navbar-dark  bg-navbar fixed-top py-2" id="navbar">
          <div class="container-fluid" id="navCont">
             <a href="/" class="navbar-brand">
                <img src="/image/logo/logo-1.png" alt=" " style="width: 10em;">
@@ -24,15 +24,15 @@
      
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav px-2 d-flex justify-content-center" style="flex:1;">
+               <ul class="navbar-nav text-center d-flex justify-content-center" style="flex:1;">
                   <li class="nav-item ">
                      <a href="/news" class="nav-link {{ ($active === "news") ? 'active' : '' }}">News</a>
                   </li>
-                  <li class="nav-item  btn-group dropdown">
+                  <li class="nav-item   dropdown">
                     
                      <a href="" class="nav-link dropdown-toggle {{ ($active === "smartphone") ? 'active' : '' }}" data-bs-toggle="dropdown">Smartphone</a>
                      <div class="dropdown-menu">
-                        <a href="/categories/asus" class="dropdown-item">Asus</a>
+                        <a href="/categories/asus" class="dropdown-item text-primary">Asus</a>
                         <a href="/categories/xiaomi" class="dropdown-item">Xiaomi</a>
                         <a href="/categories/samsung" class="dropdown-item">Samsung</a>
              
@@ -72,8 +72,8 @@
                  </li>
        
                </ul>
-               <ul class="navbar-nav ms-auto px-2">
-                  <li class="nav-item">
+               <ul class="navbar-nav ms-auto text-center">
+                  <li class="nav-item ">
                      <a href="/login-register" class="nav-link {{ ($active === "login") ? 'active' : '' }}">
                         <i class="fa-solid fa-user "></i>
                         Masuk

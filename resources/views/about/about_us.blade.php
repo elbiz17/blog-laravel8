@@ -12,10 +12,10 @@
          <div class="col-md-8 mt-2">
             <div class="card-body shadow" style="border-radius:10px;text-align:justify">
                <h4 class="display-6 fw-bolder py-5">Selamat datang di Review Gadget</h4>
-               <p>
+               <article>
 
                   <span class="fw-bold fs-4">Review Gadget</span>  adalah sebuah blog yang membahas seputar teknologi dan info menarik tentang teknologi lainnya. Jika ada kritik dan saran yang membangun blog ini kami persilahkan. Terima kasih bagi yang sudah follow blog ini.
-               </p>
+               </article>
 
                <div class="py-5">
                   <h5 class="display-8">Founder</h5>

@@ -78,35 +78,71 @@ nav{
 }
 .bg-nav{
    background-color: #03a9f4;
+  
 }
-
-
 
 .bg-navbar{
    background-color: #03a9f4;
+  
+}
+
+
+.navbar {
+   transition: all 500ms ease-in-out;
+}
+
+
+.navbar > div {
+   transition: all 1000ms ease-in-out;
 }
 
 
 
-/* .navbar-toggler{
+.navbar a{
+   font-family: 'Poppins', sans-serif;
+   font-size:16px;   
    color: #fff !important;
 }
-.navbar-toggler-icon{
-   color: white !important;
-} */
 
-/* nav ul{
-   display: flex;
-   flex: 1;
-   justify-content: center;
+.dropdown-menu{
+   background-color: #fff;
+}
+.dropdown-menu a{
+   color: #03a9f4 !important;
+}
+.dropdown-menu a:hover{
+   background-color: #03a9f4;
+   color: #fff !important;
    
-   
-} */
-nav ul li a{
-   /* font-family: 'Titillium Web', sans-serif; */
+}
+.navbar .nav-item{
+   padding: 2px 11px ;
+}
+
+.navbar .nav-item .nav-link{
+   padding: 5px 0;
+   position: relative;
+}
+
+.navbar .nav-item .nav-link::before{
+   content:'';
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 1px;
+   background-color: #fff;
+   transition: all 0.5s ease;
+   transform: scale(0);
+}
+
+.navbar .nav-item .nav-link.active::before,
+.navbar .nav-item .nav-link:hover::before{
+   transform: scale(1);
+}
+
+/* nav ul li a{
    font-family: 'Poppins', sans-serif;
- 
-   /* font-weight: 900; */
    font-size:16px;   
    color: #4ff0ff;
 
@@ -120,38 +156,21 @@ nav ul li a{
 }
 .navbar .nav-link:focus{
    color: #4ff0ff !important;
-}
+} */
 
 
-.navbar-toggler {
+/* .navbar-toggler {
    border: none;
-   background: transparent !important;
+   background: #03a9f4 !important;
  }
  
  .navbar-toggler:hover {
-     background: transparent !important;
-   }
+     background: #03a9f4 !important;
+     border: 1px solid white  !important;
+     color: #03a9f4;
+   } */
  
 
-   /* .topBar, .middleBar .bottomBar{
-      width: 35px;
-      height: 5px;
-      background-color: #000;
-      transition: 0.4s;
-      margin:6px 0;
-   }
- 
-   .change .topBar{
-      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-      transform: rotate(-45deg) translate(-9px, 6px);
-   }
-   .change .middleBar{
-      opacity: 0;
-   }
-   .change .bottomBar{
-      -webkit-transform: rotate(45deg) translate(-8px, -8px);
-      transform: rotate(45deg) translate(-8px, -8px);
-   } */
 
 /* end of css nav */
 

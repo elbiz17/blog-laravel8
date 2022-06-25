@@ -168,7 +168,8 @@ class PagesController extends Controller
     // controller pages about us
     public function about_us(){
         return view('about/about_us',[
-            "title"=>"About Us"
+            "title"=>"About Us",
+            'active'=> 'about'
         ]);
     }
 
@@ -192,7 +193,7 @@ class PagesController extends Controller
     public function category(Category $category){
         return view('smartphone', [
             'title'=>$category->name,
-            'active'=>'categories',
+            'active'=>'smartphone',
             'posts'=>$category->posts,
             'category'=>$category->name
          ]);
