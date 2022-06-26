@@ -42,7 +42,6 @@ class PagesController extends Controller
             "title" => "News",
             'active'=>'news',
             // 'posts'=>Post::all()
-            
             'posts'=>Post::latest()->filter(request(['search', 'category']))->get()
            
         ]);
@@ -220,10 +219,9 @@ class PagesController extends Controller
     }
     public function showCategories(){
         return view('showCategories', [
-            'title'=>'Kategori',
-
+            "title" => "Show Categories",
             'active'=>'categories',
-        
+            // 'posts'=>Post::all()
             'posts'=>Post::latest()->filter(request(['search', 'category']))->get()
          ]);
     }
