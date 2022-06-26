@@ -17,7 +17,7 @@
                   <div class="col-md-12 px-1">
                      <div class="berita__hero">
                       <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.2);border-top-left-radius:8px;z-index:999">
-                         <a href="/showCategories?category={{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
+                         <a href="/categories/{{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
                             {{ $posts[0]->category->name }}
                          </a>
                       </div>
@@ -92,7 +92,7 @@
                      <div class="berita flex" style="height: auto">
                         <div class="contents">
                            <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.3);border-top-left-radius:8px;z-index:999">
-                              <a href="/showCategories?category={{ $post->category->slug }}" class="text-decoration-none text-white">
+                              <a href="/news?category={{ $post->category->slug }}" class="text-decoration-none text-white">
                                  {{ $post->category->name }}
                               </a>
                            </div>

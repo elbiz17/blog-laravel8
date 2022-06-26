@@ -218,12 +218,12 @@ class PagesController extends Controller
             'category'=>$category->name
          ]);
     }
-    public function showCategories(Category $category){
+    public function showCategories(){
         return view('showCategories', [
-            'title'=>$category->name,
+            'title'=>'Kategori',
 
             'active'=>'categories',
-            'category'=>$category->name,
+        
             'posts'=>Post::latest()->filter(request(['search', 'category']))->get()
          ]);
     }
