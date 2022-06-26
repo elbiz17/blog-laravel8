@@ -63,9 +63,11 @@ Route::get('/news_kamera/{post:slug}', [PagesController::class, 'show']);
 
 // smartphone route xiaomi
 
-Route::get('smartphone', 'PagesController@smartphone');
+
 
 Route::get('/postSmartphone/{post:slug}', 'PagesController@postSmartphone');
+
+Route::get('/postLaptop/{post:slug}', 'PagesController@postLaptop');
 
 
 // smartphone route samsung
@@ -210,6 +212,7 @@ Route::get('login-register', 'LoginController@index');
 // route categories
 Route::get('/categories/', [PagesController::class, 'categories'] );
 Route::get('/categories/{category:slug}', [PagesController::class, 'category']);
+Route::get('/showCategories', 'PagesController@showCategories');
 
 // laptop
 Route::get('/categories_laptop', [PagesController::class, 'categories_laptop'] );

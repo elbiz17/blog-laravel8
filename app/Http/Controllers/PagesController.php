@@ -5,17 +5,20 @@ use App\Models\Post;
 use App\Models\Category;
 
 use App\Models\User;
-
+use Clockwork\Request\RequestType;
 
 class PagesController extends Controller
 {
     //
     public function index(){
+
+       
         return view('home',[
             'title'=>'Home',
             'active'=> 'home',
             // "posts"=>Post::all()
             // "posts"=>Post::with(['author', 'category'])->latest()->get()
+            // "posts"=>$posts->get()
             "posts"=>Post::latest()->get()
 
         ]);
@@ -23,6 +26,7 @@ class PagesController extends Controller
     public function show(Post $post){
         return view('news.news_kamera',[
             "title"=>"Single Post",
+            'active'=>'news',
             "post" =>$post
             // "post" =>Post::find($id)
         ]);
@@ -30,13 +34,22 @@ class PagesController extends Controller
 
     // controller pages news
     public function news(){
+        // dd(request('search')); untuk cek apakah sudah ditangkap proses get nya
+    
+
+
         return view("news",[
             "title" => "News",
             'active'=>'news',
-            'posts'=>Post::all()
+            // 'posts'=>Post::all()
+            
+            'posts'=>Post::latest()->filter(request(['search', 'category']))->get()
            
         ]);
     }
+
+
+
     // public function news_kamera(){
     //     return view("news/news_kamera",[
     //         "title" => "News",
@@ -53,11 +66,18 @@ class PagesController extends Controller
         ]);
     }
 
-    // controller pages xiaomi
+   
     public function postSmartphone(Post $post){
         return view("smartphone/show/show",[
             "title" => "Smartphone",
             'active'=>'smartphone',
+            "post"=>$post
+        ]);
+    }
+    public function postLaptop(Post $post){
+        return view("laptop/show/show",[
+            "title" => "Laptop",
+            'active'=>'laptop',
             "post"=>$post
         ]);
     }
@@ -191,11 +211,20 @@ class PagesController extends Controller
         ]);
     }
     public function category(Category $category){
-        return view('smartphone', [
+        return view('showCategories', [
             'title'=>$category->name,
-            'active'=>'smartphone',
+            'active'=>'categories',
             'posts'=>$category->posts,
             'category'=>$category->name
+         ]);
+    }
+    public function showCategories(Category $category){
+        return view('showCategories', [
+            'title'=>$category->name,
+
+            'active'=>'categories',
+            'category'=>$category->name,
+            'posts'=>Post::latest()->filter(request(['search', 'category']))->get()
          ]);
     }
     // public function categories_laptop(){

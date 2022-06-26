@@ -303,7 +303,7 @@
                   </div>
                   <div class="image">
                      <a class="text-decoration-none" href="/news_kamera/{{ $posts[0]->slug }}">
-                        <img src="https://source.unsplash.com/random/600x400/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
+                        <img src="https://source.unsplash.com/random/450x200/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
                      </a>
                   </div>
                     
@@ -331,11 +331,12 @@
                   </div>
                  </div>
              </div>
-             @else 
-               <p class="text-center">No post found</p>
-             @endif
          </div>
      </div>
+     @else 
+     <p class="text-center">No post found</p>
+   @endif
+
      <div class="container">
          <div class="row">
              @foreach ($posts->skip(1) as $post)

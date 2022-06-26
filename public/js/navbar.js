@@ -69,7 +69,7 @@ function scroll() {
       navBar.classList.replace("bg-navbar", "bg-nav"); // ganti background navbar
       navBar.classList.replace("navbar-dark", "navbar-light"); // ganti tampilan navbar
       navCont.classList.replace("container-fluid", "container"); // ubah margin pada navbar
-    } else if (calc <= 0) { // jika posisi scroll sama dengan 0 pixel
+    } else if (calc <= 500) { // jika posisi scroll sama dengan 0 pixel
       navBar.classList.replace("bg-nav", "bg-navbar");
       navBar.classList.replace("navbar-light", "navbar-dark");
       navCont.classList.replace("container", "container-fluid");

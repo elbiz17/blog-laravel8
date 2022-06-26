@@ -7,7 +7,7 @@
 
    <div class="container ">
       <div class="py-3 ">
-         <h4 class="display-8">{{ $title }}</h4>
+         <h4 class="display-8">Kategori | {{ $category }}</h4>
       </div>
       <div class="row">
          <div class="col-md-8">
@@ -64,25 +64,6 @@
                     </div>
                  </div>
                  @endif
-              
-                  {{-- @foreach($posts->skip(1) as $post)
-                  <div class="col-md-3 news   py-2">
-                     <div class="news-wrap">
-                        <a href="/news_kamera/{{ $post->slug }}" class="text-decoration-none text-black">
-                           <div class="image">
-                              <img src="image/phone-108.jpg" alt="" >
-                           </div>
-                           <div class="card-body">
-                              <div class="py-2">
-                                 <h5 style="font-weight: 800;font-size:18px">{{ $post->title }}</h5>
-                                
-                              </div>
-                        
-                           </div>
-                        </a>
-                     </div>
-                  </div>
-                  @endforeach --}}
                </div>
             </div>
             <div class="px-1">
@@ -105,17 +86,11 @@
                               <h5 class="card-title">{{ $post->title }}</h5>
                               <div class="card-text" style="min-height: 4rem">
                                  <label style="font-size:0.7em;margin-bottom:5px">By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
-                           
-                                 {{-- <p>
-                                    {{ $post->excerpt }}
-                                 </p> --}}
                               </div>
                               <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
                                  <h6 style="font-size:9px;font-weight:100">{{ $post->created_at->diffForHumans() }}</h6>
                               </div>
-                              {{-- <a href="/news_kamera/{{ $post->slug }}" class="btn btn-outline-primary icon-link">Read More 
-                                 <span class="bi">&rarr;</span> 
-                              </a> --}}
+                           
                            </div>
                         </div>
                      </div>
@@ -134,10 +109,7 @@
                <h5 class="py-2">Cari Artikel</h5>
                <div class="row">
                   <div class="col-md">
-                     <form action="/news" >
-                        @if(request('category'))
-                           <input type="hidden" name="category" value="{{ request('category') }}">
-                        @endif
+                     <form action="/showCategories" >
                         <input type="search" name="search" id="" class="form-control" placeholder="Search..." value="{{ request('search') }}">
                         <button class="btn btn-outline-primary mt-2 me-auto" type="submit">Search</button>
                      </form>
@@ -187,33 +159,14 @@
                      </div>
                   </div>
                </div>
-               {{-- <div class="row">
-                  <h5>All Categories</h5>
-                  @foreach ($categories as $category)
-                  <ul>
-                     <li class="">
-                        <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
-                     </li>
-                  </ul>
-                  @endforeach
-               </div> --}}
+  
             </div>
          </div>
       </div>
       
    </div>
 
-   {{-- <div class="container">
-      <div class="sidebar">
-         <div class="col-md-3">
-            <input type="search" name="" id="" value="Search..." class="form-control">
-            <div>
-               <h4>About Me</h4>
-   
-            </div>
-         </div>
-      </div>
-   </div> --}}
+
 </main>
 
 

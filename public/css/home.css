@@ -700,10 +700,11 @@ nav{
 
 
 }
-.berita__hero .image img{
-   height: 380px;
+/* .berita__hero .image img{
+   height: 350px;
+   max-height: em;
    width: 100%;
-}
+} */
 .berita__hero h5{
    font-family: 'Titillium Web', sans-serif;
    font-size: 18px;
@@ -719,7 +720,13 @@ nav{
     
    }
    .berita__hero .image img{
+      
       height: 170px;
+   }
+   .berita__hero h5{
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 0.3em;
+      font-weight: 600;
    }
 
 }
@@ -781,8 +788,8 @@ nav{
 }
 .berita h5{
    font-family: 'Titillium Web', sans-serif;
-   font-size: 18px;
-   font-weight: 600;
+   font-size: 15px;
+   font-weight: 700;
 }
 @media only screen and (max-width:768px){
    .berita{
