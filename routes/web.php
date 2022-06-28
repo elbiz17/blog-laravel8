@@ -41,7 +41,7 @@ Route::get('news', 'PagesController@news');
 
 
 // Route::get('news_kamera/{slug}', 'PagesController@show');
-Route::get('/news_kamera/{post:slug}', [PagesController::class, 'show']);
+Route::get('/show/{post:slug}', [PagesController::class, 'show']);
 // Route::get('news', function () {
 //     return view('news',[
 //         "title"=>"News"

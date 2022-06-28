@@ -725,7 +725,7 @@ nav{
    }
    .berita__hero h5{
       font-family: 'Titillium Web', sans-serif;
-      font-size: 0.3em;
+      font-size: 18px;
       font-weight: 600;
    }
 
@@ -749,12 +749,12 @@ nav{
 
 
 .berita{
-   /* min-width: 32.33%;
+   /* min-width: 32.33%; */
    
 
   
 
-   margin: 5px ;   */
+   /* margin: 5px ;   */ 
    padding: 0 !important;
    border-radius: 8px;
 
@@ -788,7 +788,7 @@ nav{
 }
 .berita h5{
    font-family: 'Titillium Web', sans-serif;
-   font-size: 15px;
+   font-size: 13px;
    font-weight: 700;
 }
 @media only screen and (max-width:768px){

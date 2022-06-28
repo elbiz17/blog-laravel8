@@ -7,7 +7,7 @@
 
    <div class="container ">
       <div class="py-3 ">
-         <h4 class="display-8">{{ $title }}</h4>
+         <h4 class="display-8">{{ $title}}</h4>
       </div>
       <div class="row">
          <div class="col-md-8">
@@ -17,12 +17,12 @@
                   <div class="col-md-12 px-1">
                      <div class="berita__hero">
                       <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.2);border-top-left-radius:8px;z-index:999">
-                         <a href="/categories/{{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
+                         <a href="/news?category={{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
                             {{ $posts[0]->category->name }}
                          </a>
                       </div>
                       <div class="image">
-                         <a class="text-decoration-none" href="/news_kamera/{{ $posts[0]->slug }}">
+                         <a class="text-decoration-none" href="/show/{{ $posts[0]->slug }}">
                             <img class="img-fluid" src="https://source.unsplash.com/random/400x200/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
                          </a>
                       </div>
@@ -31,7 +31,7 @@
                          <h5 class="card-title">{{ $posts[0]->title }}</h5>
                          <div class="card-text">
                             <label style="font-size:0.8em;margin-bottom:5px">By :
-                                <a class="text-decoration-none" href="/authors/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
+                                <a class="text-decoration-none" href="/news?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/news?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
                                 <span class="px-2">
                                   {{ $posts[0]->created_at->diffForHumans() }}
                                </span>
@@ -45,7 +45,7 @@
                          <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
                             <h6 style="font-size:9px;font-weight:100">{{ $posts[0]->created_at->diffForHumans() }}</h6>
                          </div>
-                         <a href="/news_kamera/{{ $posts[0]->slug }}" class="btn btn-outline-primary icon-link">Read More 
+                         <a href="/show/{{ $posts[0]->slug }}" class="btn btn-outline-primary icon-link">Read More 
                             <span class="bi">&rarr;</span> 
                          </a>
                       </div>
@@ -97,14 +97,21 @@
                               </a>
                            </div>
                            <div class="image">
-                              <a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">
+                              <a class="text-decoration-none" href="/show/{{ $post->slug }}">
                                  <img src="https://source.unsplash.com/random/200x100/?{{ $post->category->name }}" alt="">
                               </a>
                            </div>
                            <div class="card-body">
                               <h5 class="card-title">{{ $post->title }}</h5>
                               <div class="card-text" style="min-height: 4rem">
-                                 <label style="font-size:0.7em;margin-bottom:5px">By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
+                                 <label style="font-size:0.7em;margin-bottom:5px">By : 
+                                    <a class="text-decoration-none" href="/news?author={{ $post->author->username }}">
+                                       {{ $post->author->name }}
+                                    </a> in
+                                    <a class="text-decoration-none" href="/news?category={{ $post->category->slug }}">
+                                       {{ $post->category->name }}
+                                    </a>
+                                 </label>
                            
                                  {{-- <p>
                                     {{ $post->excerpt }}
@@ -137,6 +144,9 @@
                      <form action="/news" >
                         @if(request('category'))
                            <input type="hidden" name="category" value="{{ request('category') }}">
+                        @endif
+                        @if(request('author'))
+                           <input type="hidden" name="author" value="{{ request('author') }}">
                         @endif
                         <input type="search" name="search" id="" class="form-control" placeholder="Search..." value="{{ request('search') }}">
                         <button class="btn btn-outline-primary mt-2 me-auto" type="submit">Search</button>
@@ -179,7 +189,7 @@
                   <div class="bg-light">
                      <div class="py-2">
                         <label for="">Email</label>
-                        <input type="email" value="lukmanbudimantrue@gmail.com" disabled class="form-control"> 
+                        <input type="email" value="gmail@lukman.com" disabled class="form-control"> 
                      </div>
                      <div class="py-2">
                         <label for="">Instagram</label>

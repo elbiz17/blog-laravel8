@@ -14,7 +14,8 @@
                <div class="berita p-0 position-relative" style="overflow: hidden">
                   <img class="img-fluid" src="https://source.unsplash.com/random/600x400/?{{ $category->name }}" alt="{{ $category->name }}" alt="">
                   <div class="position-absolute top-50 start-50 translate-middle" >
-                     <h5  class="card-title text-center  flex-fill py-2" style="background-color:rgba(0,0,0,0.7);width:auto;min-width:25rem;color:white !important"><a class="text-decoration-none text-white" href="/categories/{{ $category->slug }}">{{ $category->name }}</a></h5>
+                     <h5  class="card-title text-center  flex-fill py-2" style="background-color:rgba(0,0,0,0.7);width:auto;min-width:25rem;color:white !important">
+                        <a class="text-decoration-none text-white" href="/news?category={{ $category->slug }}">{{ $category->name }}</a></h5>
                   </div>
                </div>
             </a>

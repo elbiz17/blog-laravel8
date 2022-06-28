@@ -31,7 +31,7 @@
                          <h5 class="card-title">{{ $posts[0]->title }}</h5>
                          <div class="card-text">
                             <label style="font-size:0.8em;margin-bottom:5px">By :
-                                <a class="text-decoration-none" href="/authors/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
+                                <a class="text-decoration-none" href="/showCategories?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
                                 <span class="px-2">
                                   {{ $posts[0]->created_at->diffForHumans() }}
                                </span>
@@ -111,7 +111,10 @@
                   <div class="col-md">
                      <form action="/showCategories" >
                         @if(request('category'))
-                           <input type="hidden" name="category" value="{{ request('category') }}">
+                           <input type="hidden" name="category" class="form-control" placeholder="Search..." value="{{ request('category') }}">
+                         @endif
+                        @if(request('author'))
+                           <input type="hidden" name="author" class="form-control" placeholder="Search..." value="{{ request('author') }}">
                          @endif
                         <input type="search" name="search" id="" class="form-control" placeholder="Search..." value="{{ request('search') }}">
                         <button class="btn btn-outline-primary mt-2 me-auto" type="submit">Search</button>
@@ -124,7 +127,7 @@
                      <div class="row row-cols-2 px-3 py-3">
                         
                         <div class="avatar  d-flex align-items-center text-md-start text-center justify-content-center">
-                           <img class="rounded-circle " width="100%" src="image/pf.jpg" alt="" style="border:1px solid blue">
+                           <img class="rounded-circle " width="100%" src="/image/pf.jpg" alt="" style="border:1px solid blue">
                         </div>
                         <div class="about text-start ">
                            <div><label class=""  for="" style="font-size: 16px">Lukman Budiman</label></div>
@@ -135,7 +138,7 @@
                      <div class="row row-cols-2 pb-3 px-3">
    
                         <div class="avatar  d-flex align-items-center ">
-                           <img class="rounded-circle " width="100%" src="image/RG.gif" alt="" style="border:1px solid blue">
+                           <img class="rounded-circle " width="100%" src="/image/RG.gif" alt="" style="border:1px solid blue">
                         </div>
                         <div class=" about text-start ">
                            <div><label class="" style="font-size: 16px" for="">Review Gadget</label></div>

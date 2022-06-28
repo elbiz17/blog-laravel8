@@ -24,7 +24,7 @@ class PagesController extends Controller
         ]);
     }
     public function show(Post $post){
-        return view('news.news_kamera',[
+        return view('news.show',[
             "title"=>"Single Post",
             'active'=>'news',
             "post" =>$post
@@ -41,8 +41,7 @@ class PagesController extends Controller
         return view("news",[
             "title" => "News",
             'active'=>'news',
-            // 'posts'=>Post::all()
-            'posts'=>Post::latest()->filter(request(['search', 'category']))->get()
+            'posts'=>Post::latest()->filter(request(['search', 'category', 'author']))->get()
            
         ]);
     }
@@ -222,7 +221,7 @@ class PagesController extends Controller
             "title" => "Show Categories",
             'active'=>'categories',
             // 'posts'=>Post::all()
-            'posts'=>Post::latest()->filter(request(['search', 'category']))->get()
+            'posts'=>Post::latest()->filter(request(['search', 'category', 'author']))->get()
          ]);
     }
     // public function categories_laptop(){
@@ -264,8 +263,9 @@ class PagesController extends Controller
     // }
 
     public function author(User $author){
-        return view('postingan.post',[
+        return view('showCategories',[
             'title'=>'User Posts',
+            'active'=>'categories',
             'posts' => $author->posts,
             'laptops' => $author->laptops
         ]);

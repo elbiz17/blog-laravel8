@@ -90,20 +90,20 @@
       <div class="container">
          <div class="row  row-cols-3  d-flex" style="position: relative;top:-15px">
             <div class="col-md ">
-               <div class="bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
+               <div class="image bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
                   <img class="img-fluid" src="/image/logo/logo-asus.png" alt="" style="width: 13em;height:4em;min-height:100%">
                   {{-- <p class="text-center"style="font-size:0.75em">ASUS</p> --}}
                </div>
             </div>
             <div class="col-md">
-               <div class="bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
+               <div class="image bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
                   {{-- <p class="text-center" style="font-size:0.75em">Xiaomi</p> --}}
                   <img class="img-fluid" src="/image/logo/logo-xiaomi.png" alt="" style="width: 100%;height:4em;min-height:100%">
 
                </div>
             </div>
             <div class="col-md">
-               <div class="bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
+               <div class="image bg-white text-center shadow"style="line-height:80px;border-radius:8px;">
                   {{-- <p class="text-center" style="font-size:0.75em">Samsung</p> --}}
                   <img class="img-fluid" src="/image/logo/logo-samsung.png" alt="" style="width: 100%;height:4em;min-height:100%">
 
@@ -309,8 +309,8 @@
                     
                   <div class="card-body">
                      <h5 class="card-title" style="height: 40px">{{ $posts[0]->title }}</h5>
-                     <div class="card-text" style="min-height: 4rem">
-                        <label style="font-size:0.8em;margin-bottom:5px">By :
+                     <div class="card-text" style="min-height: 3rem">
+                        <label style="font-size:11px;margin-bottom:5px">
                             <a class="text-decoration-none" href="/authors/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
                             <span class="px-2">
                               {{ $posts[0]->created_at->diffForHumans() }}
@@ -323,7 +323,7 @@
                         </p>
                      </div>
                      <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
-                        <h6 style="font-size:9px;font-weight:100">{{ $posts[0]->created_at->diffForHumans() }}</h6>
+                        <h6 style="font-size:11px;font-weight:100">{{ $posts[0]->created_at->diffForHumans() }}</h6>
                      </div>
                      <a href="/news_kamera/{{ $posts[0]->slug }}" class="btn btn-outline-primary icon-link">Read More 
                         <span class="bi">&rarr;</span> 
@@ -338,7 +338,7 @@
    @endif
 
      <div class="container">
-         <div class="row">
+         <div class="row row-cols-2">
              @foreach ($posts->skip(1) as $post)
                <div class="col-md-4 py-2">
                   <div class="berita flex" style="height: auto">
@@ -354,31 +354,32 @@
                            </a>
                         </div>
                         <div class="card-body">
-                           <h5 class="card-title" style="height: 40px">{{ $post->title }}</h5>
-                           <div class="card-text" style="min-height: 8rem">
-                              <label style="font-size:0.8em;margin-bottom:5px">By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
+                           <h5 class="card-title">{{ $post->title }}</h5>
+                           <div class="card-text" style="height:3rem">
+                              <label style="font-size:9px;margin-bottom:5px"><a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
                         
-                              <p>
+                              {{-- <p>
                                  {{ $post->excerpt }}
-                              </p>
+                              </p> --}}
                            </div>
-                           <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
+                          
+                           {{-- <a href="/news_kamera/{{ $post->slug }}" class="btn btn-outline-primary icon-link">Read More 
+                              <span class="bi">&rarr;</span> 
+                           </a> --}}
+                        </div>
+                         <div class="card-text text-end p-3" style="bottom:0;right:0;position:absolute">
                               <h6 style="font-size:9px;font-weight:100">{{ $post->created_at->diffForHumans() }}</h6>
                            </div>
-                           <a href="/news_kamera/{{ $post->slug }}" class="btn btn-outline-primary icon-link">Read More 
-                              <span class="bi">&rarr;</span> 
-                           </a>
-                        </div>
                      </div>
                   </div>
                </div>
                  
              @endforeach
-             <div class="loadMore">
-               <a href="#" id="loadMore">Load More</a>
+             
             </div>
- 
-         </div>
+            <div class="loadMore">
+              <a href="#" id="loadMore">Load More</a>
+           </div>
      </div>
    
       

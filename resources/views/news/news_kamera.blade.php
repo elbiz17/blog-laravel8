@@ -9,7 +9,7 @@
             <div class="card-body bg-white border shadow" style="border-radius: 10px">
                <div class="card-header bg-white">
                   <h5>{{ $post->title }}</h5>
-                  <p>by : {{ $post->author->name }} in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a> </p>
+                  <p>by : {{ $post->author->name }} in <a class="text-decoration-none" href="/news?category={{ $post->category->slug }}">{{ $post->category->name }}</a> </p>
                </div>
                <div class="card-body ">
                   <div class="text-center">

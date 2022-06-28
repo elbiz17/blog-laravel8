@@ -22,10 +22,10 @@
                <div class="card-body ">
                   <article>
                      <div class="py-2" style="height: 60px">
-                        <h4 ><a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">{{ $post->title }}</a></h4>
+                        <h5 style="font-size:1.3em; font-weight:800;font-family:'Titillium Web', sans-serif" ><a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">{{ $post->title }}</a></h5>
                      </div>
                      <div class="py-2" style="height: 120px">
-                        <h6>By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></h6>
+                        <label style="font-size: 0.7em">By : <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
                         <p>{{ $post->excerpt }}</p>
                      </div>
                      <div class="py-2" style="left:0;bottom:0;position:relative">
