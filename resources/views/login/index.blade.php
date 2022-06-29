@@ -123,73 +123,85 @@
    
    <section class="login d-flex align-items-center justify-content-center">
       <div class="container">
-         <div class="row justify-content-center d-flex p-2">
-            <div class="col-md-5">
-               {{-- <div class="card"> --}}
-                  <!-- Pills navs -->
-                  <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active btn__login" id="pills-home-tab" data-toggle="pill" href="#signIn" role="tab" aria-controls="pills-home" aria-selected="true">Login</a> 
+         
+            <div class="row justify-content-center p-2">
+               <div class="col-lg-5 col-md-10 mt-4">
+                  {{-- <div class="card"> --}}
+                     <!-- Pills navs -->
+                     {{-- <small class="text-center d-block p-3">
+                        Not have account?
+                        <a href="#signUp" class="text-decoration-none">Please sign up now!</a>
+                      </small> --}}
+                     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                        <li class="nav-item" role="presentation">
+                           <a class="nav-link active btn__login" id="pills-home-tab" data-toggle="pill" href="#signIn" role="tab" aria-controls="pills-home" aria-selected="true">Login</a> 
+      
+                        </li>
+                        <li class="nav-item" role="presentation" id="signup">
+                           <a class="nav-link btn__registration" id="pills-profile-tab" data-toggle="pill" href="#signUp" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a> 
+      
+                        </li>
+                     </ul>
+                     <!-- Pills navs -->
+                     <div class="tab-content" >
+                        {{-- <div class="signIn tab-pane fade show active form-floating" id="signIn">
+                           <form action="" method="post">
+                              @csrf
+                              <div class="form-floating pt-2">
+                           
+                                 <input type="text" name="username" id="username" placeholder="Email or Username" class="form-control"> 
+                                 <label for="floatingInput">Email address</label>
+                              </div>
+                              <div class="form-floating pt-2">
+                     
+                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                 <label for="floatingPassword">Password</label>
+                              </div>
+                              <div class="py-3">
+                                 <input type="checkbox" name="" id=""> Remember Me 
+                              </div>
+                              <div class="py-3">
+                                 <button class="btn btn-outline-primary form-control ">Sign In</button>   
+                              </div>
+                          
+                            
+                              
+                           </form>
+                        </div> --}}
+                        <div class="signUp tab-pane fade " id="signUp">
+                           <form action="" method="post">
+                              @csrf
+                              <div class="pt-2 form-floating">
+                                 <input type="text" name="name" id="name" placeholder="Nama Lengkap" class="form-control"> 
+                                 <label for="name">Name</label>
+                              </div>
+                              <div class="pt-2 form-floating">
+                                 <input type="text" name="username" id="username" placeholder="Username" class="form-control"> 
+                                 <label for="username">Username</label>
+                              </div>
+                              <div class="pt-2 form-floating">
+                                 <input type="text" name="email" id="email" placeholder="Email" class="form-control"> 
+                                 <label for="email">Email</label>
+                              </div>
+                              <div class="pt-2 form-floating">
+                                 <input type="password" name="password" id="password" placeholder="Password" class="form-control"> 
+                                 <label for="password">Password</label>
+                              </div>
+                              {{-- <div class="py-3">
+                                 <input type="checkbox" name="" id=""> I have read and agree to the terms
+                              </div> --}}
+                              <div class="py-3">
+                                 <button type="submit" class="btn btn-outline-primary form-control">Sign Up</button>   
+                              </div>
+                           </form>
+                        </div>
    
-                     </li>
-                     <li class="nav-item" role="presentation">
-                        <a class="nav-link btn__registration" id="pills-profile-tab" data-toggle="pill" href="#signUp" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a> 
+                     </div>
    
-                     </li>
-                  </ul>
-                  <!-- Pills navs -->
-                  <div class="tab-content" >
-                     <div class="signIn tab-pane fade show active" id="signIn">
-                        <form action="" method="post">
-                           <div class="pt-3">
-                              {{-- <label for="username">Username :</label> --}}
-                              <input type="text" name="username" id="username" placeholder="Email or Username" class="form-control"> 
-                           </div>
-                           <div class="pt-3">
-                              {{-- <label for="username">Password :</label> --}}
-                              <input type="text" name="username" id="username" placeholder="Password" class="form-control"> 
-                           </div>
-                           <div class="py-3">
-                              <input type="checkbox" name="" id=""> Remember Me 
-                           </div>
-                           <div class="py-3">
-                              <button class="btn btn-outline-primary form-control ">Sign In</button>   
-                           </div>
-                       
-                        </form>
-                     </div>
-                     <div class="signUp tab-pane fade " id="signUp">
-                        <form action="#" method="post">
-                           <div class="pt-3">
-                              {{-- <label for="username">Username :</label> --}}
-                              <input type="text" name="username" id="username" placeholder="Nama Lengkap" class="form-control"> 
-                           </div>
-                           <div class="pt-3">
-                              {{-- <label for="username">Username :</label> --}}
-                              <input type="text" name="username" id="username" placeholder="Username" class="form-control"> 
-                           </div>
-                           <div class="pt-3">
-                              {{-- <label for="username">Username :</label> --}}
-                              <input type="text" name="email" id="email" placeholder="Email" class="form-control"> 
-                           </div>
-                           <div class="pt-3">
-                              {{-- <label for="username">Password :</label> --}}
-                              <input type="text" name="username" id="username" placeholder="Password" class="form-control"> 
-                           </div>
-                           <div class="py-3">
-                              <input type="checkbox" name="" id=""> I have read and agree to the terms
-                           </div>
-                           <div class="py-3">
-                              <button class="btn btn-outline-primary form-control">Sign Up</button>   
-                           </div>
-                        </form>
-                     </div>
-
-                  </div>
-
-               {{-- </div> --}}
+                  {{-- </div> --}}
+               </div>
             </div>
-         </div>
+         
       </div>
    </section>
 

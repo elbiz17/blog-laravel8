@@ -10,7 +10,7 @@
             <div class="card-body bg-white border shadow" style="border-radius: 10px">
                <div class="card-header bg-white">
                   <h5>{{ $post->title }}</h5>
-                  <p>By : {{ $post->author->name }} in <a href="/news?category={{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+                  <p>By : {{ $post->author->name }} in <a href="/smartphone?category={{ $post->category->slug }}">{{ $post->category->name }}</a></p>
                </div>
                <div class="card-body ">
                   <p style="text-align: justify">Tablet HUAWEI MatePad Diluncurkan 12 April 2022, Tawarkan Pengalaman Komputasi Setara Laptop - Semakin dinamisnya kehidupan modern saat ini mendorong banyak orang untuk lebih tangkas dalam beraktivitas di mana saja dan kapan saja. Oleh karenanya, dibutuhkan lebih dari sekadar perangkat yang mampu mengakomodir berbagai skenario secara efisien, namun juga nyaman dan ergonomis untuk dibawa ke mana saja. Tablet menjadi jawaban terbaik untuk kebutuhan tersebut, di mana tablet kini mampu menjadi pengganti laptop.

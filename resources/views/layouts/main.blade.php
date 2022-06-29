@@ -32,22 +32,22 @@
                     
                      <a href="" class="nav-link dropdown-toggle {{ ($active === "smartphone") ? 'active' : '' }}" data-bs-toggle="dropdown">Smartphone</a>
                      <div class="dropdown-menu">
-                        <a href="/categories/asus" class="dropdown-item text-primary">Asus</a>
-                        <a href="/categories/xiaomi" class="dropdown-item">Xiaomi</a>
-                        <a href="/categories/samsung" class="dropdown-item">Samsung</a>
+                        <a href="/smartphone?category=asus" class="dropdown-item text-primary">Asus</a>
+                        <a href="/smartphone?category=xiaomi" class="dropdown-item">Xiaomi</a>
+                        <a href="/smartphone?category=samsung" class="dropdown-item">Samsung</a>
              
 
                      </div>
                   </li>
                   <li class="nav-item ">
-                     <a href="/gadget" class="nav-link {{ ($active === "gadget") ? 'active' : '' }}">Gadget</a>
+                     <a href="/gadget?category=gadget" class="nav-link {{ ($active === "gadget") ? 'active' : '' }}">Gadget</a>
                   </li>
                   <li class="nav-item  dropdown">
                      <a href="" class="nav-link dropdown-toggle {{ ($active === "laptop") ? 'active' : '' }}" data-bs-toggle="dropdown">Laptop</a>
                      <div class="dropdown-menu">
-                        <a href="/categories/laptop-acer" class="dropdown-item">Acer</a>
-                        <a href="/categories/laptop-asus" class="dropdown-item">Asus</a>
-                        <a href="/categories/laptop-axioo" class="dropdown-item">Axioo</a>
+                        <a href="/laptop?category=laptop-acer" class="dropdown-item">Acer</a>
+                        <a href="/laptop?category=laptop-asus" class="dropdown-item">Asus</a>
+                        <a href="/laptop?category=laptop-axioo" class="dropdown-item">Axioo</a>
             
                      </div>
                   </li>
@@ -55,7 +55,7 @@
                      <a href="/categories" class="nav-link {{ ($active === "categories") ? 'active' : '' }}">Kategori</a>
                   </li>
                   <li class="nav-item ">
-                     <a href="/tutorial" class="nav-link {{ ($active === "tutorial") ? 'active' : '' }}">Tutorial</a>
+                     <a href="/tutorial?category=tutorial" class="nav-link {{ ($active === "tutorial") ? 'active' : '' }}">Tutorial</a>
                   </li>
           
                   <li class="nav-item  dropdown">
@@ -74,8 +74,9 @@
                </ul>
                <ul class="navbar-nav ms-auto text-center">
                   <li class="nav-item ">
-                     <a href="/login-register" class="nav-link {{ ($active === "login") ? 'active' : '' }}">
-                        <i class="fa-solid fa-user "></i>
+                     <a href="/register" class="nav-link {{ ($active === "login") ? 'active' : '' }}">
+                        {{-- <i class="fa-solid fa-user "></i> --}}
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Masuk
                      </a>
                   </li>

@@ -3,7 +3,10 @@
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +68,12 @@ Route::get('/show/{post:slug}', [PagesController::class, 'show']);
 
 
 
+Route::get('/smartphone', 'PagesController@smartphone');
 Route::get('/postSmartphone/{post:slug}', 'PagesController@postSmartphone');
+
+
+
+Route::get('/laptop', 'PagesController@laptop');
 
 Route::get('/postLaptop/{post:slug}', 'PagesController@postLaptop');
 
@@ -184,7 +192,19 @@ Route::get('about_us', 'PagesController@about_us');
 
 // login route
 
-Route::get('login-register', 'LoginController@index');
+
+
+Route::get('login', [LoginController::class, 'index']);  
+
+Route::get('register', [RegisterController::class, 'index']);   
+Route::post('register', [RegisterController::class, 'store']);   
+
+// Route::get('register', 'RegisterController@index');   
+// Route::post('register', 'RegisterController@store');   
+
+
+
+// Route::get('/login-register', [LoginController::class, 'index']);
 
 
 // end of login route

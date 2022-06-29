@@ -9,6 +9,9 @@
       <div class="row">
          <h5>All Categories</h5>
          @foreach ($categories as $category)
+         @if(request('tutorial'))
+            
+         @endif
          <div class=" col-md-4 py-2">
             <a href="/categories/{{ $category->slug }}">
                <div class="berita p-0 position-relative" style="overflow: hidden">

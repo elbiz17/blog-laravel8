@@ -36,10 +36,18 @@ class PagesController extends Controller
     public function news(){
         // dd(request('search')); untuk cek apakah sudah ditangkap proses get nya
     
-
+        $title = '';
+        if(request('category')){
+            $category = Category::firstWhere('slug', request('category'));
+            $title = ' in ' . $category->name;
+        }
+        if(request('author')){
+            $author = User::firstWhere('username', request('author'));
+            $title = ' By ' . $author->name;
+        }
 
         return view("news",[
-            "title" => "News",
+            "title" => "News" . $title,
             'active'=>'news',
             'posts'=>Post::latest()->filter(request(['search', 'category', 'author']))->get()
            
@@ -57,10 +65,21 @@ class PagesController extends Controller
 
     // controller pages smartphone
     public function smartphone(){
-        return view("smartphone",[
-            "title" => "Smartphone ",
+        $title = '';
+        if(request('category')){
+            $category = Category::firstWhere('slug', request('category'));
+            $title = ' in ' . $category->name;
+        }
+        if(request('author')){
+            $author = User::firstWhere('username', request('author'));
+            $title = ' By ' . $author->name;
+        }
+
+        return view("category.smartphone",[
+            "title" => "Post" . $title,
             'active'=>'smartphone',
-            'posts'=>Post::latest()->get()
+            'posts'=>Post::latest()->filter(request(['search', 'category', 'author']))->get()
+           
         ]);
     }
 
@@ -70,6 +89,28 @@ class PagesController extends Controller
             "title" => "Smartphone",
             'active'=>'smartphone',
             "post"=>$post
+        ]);
+    }
+
+
+
+
+    public function laptop(){
+        $title = '';
+        if(request('category')){
+            $category = Category::firstWhere('slug', request('category'));
+            $title = ' in ' . $category->name;
+        }
+        if(request('author')){
+            $author = User::firstWhere('username', request('author'));
+            $title = ' By ' . $author->name;
+        }
+
+        return view("category.laptop",[
+            "title" => "Post" . $title,
+            'active'=>'laptop',
+            'posts'=>Post::latest()->filter(request(['search', 'category', 'author']))->get()
+           
         ]);
     }
     public function postLaptop(Post $post){
@@ -113,10 +154,21 @@ class PagesController extends Controller
 
     // controller pages gadget
     public function gadget(){
-        return view("gadget",[
-            "title"=>"Gadget",
+        $title = '';
+        if(request('category')){
+            $category = Category::firstWhere('slug', request('category'));
+            $title = ' in ' . $category->name;
+        }
+        if(request('author')){
+            $author = User::firstWhere('username', request('author'));
+            $title = ' By ' . $author->name;
+        }
+
+        return view("category.gadget",[
+            "title" => "" . $title,
             'active'=>'gadget',
-            'posts'=>Post::all()
+            'posts'=>Post::latest()->filter(request(['search', 'category', 'author']))->get()
+           
         ]);
     }
     public function postGadget(Post $post){
@@ -262,14 +314,14 @@ class PagesController extends Controller
     //     ]);
     // }
 
-    public function author(User $author){
-        return view('showCategories',[
-            'title'=>'User Posts',
-            'active'=>'categories',
-            'posts' => $author->posts,
-            'laptops' => $author->laptops
-        ]);
-    }
+    // public function author(User $author){
+    //     return view('showCategories',[
+    //         'title'=>'User Posts',
+    //         'active'=>'categories',
+    //         'posts' => $author->posts,
+    //         'laptops' => $author->laptops
+    //     ]);
+    // }
 
     // public function smartCategories(){
     //     return view('category.smartphone',[

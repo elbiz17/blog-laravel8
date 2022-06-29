@@ -7,7 +7,7 @@
 
    <div class="container ">
       <div class="py-3 ">
-         <h4 class="display-8">{{ $title }}</h4>
+         <h4 class="display-8">Post{{ $title }}</h4>
       </div>
       <div class="row">
          <div class="col-md-8">
@@ -17,12 +17,12 @@
                   <div class="col-md-12 px-1">
                      <div class="berita__hero">
                       <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.2);border-top-left-radius:8px;z-index:999">
-                         <a href="/news?category={{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
+                         <a href="/gadget?category=gadget" class="text-decoration-none text-white" >
                             {{ $posts[0]->category->name }}
                          </a>
                       </div>
                       <div class="image">
-                         <a class="text-decoration-none" href="/show/{{ $posts[0]->slug }}">
+                         <a class="text-decoration-none" href="/postGadget/{{ $posts[0]->slug }}">
                             <img class="img-fluid" src="https://source.unsplash.com/random/400x200/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
                          </a>
                       </div>
@@ -31,7 +31,7 @@
                          <h5 class="card-title">{{ $posts[0]->title }}</h5>
                          <div class="card-text">
                             <label style="font-size:0.8em;margin-bottom:5px">By :
-                                <a class="text-decoration-none" href="/news?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/news?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
+                                <a class="text-decoration-none" href="/gadget?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/gadget?category=gadget">{{ $posts[0]->category->name }}</a>
                                 <span class="px-2">
                                   {{ $posts[0]->created_at->diffForHumans() }}
                                </span>
@@ -45,7 +45,7 @@
                          <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
                             <h6 style="font-size:9px;font-weight:100">{{ $posts[0]->created_at->diffForHumans() }}</h6>
                          </div>
-                         <a href="/show/{{ $posts[0]->slug }}" class="btn btn-outline-primary icon-link">Read More 
+                         <a href="/postGadget/{{ $posts[0]->slug }}" class="btn btn-outline-primary icon-link">Read More 
                             <span class="bi">&rarr;</span> 
                          </a>
                       </div>
@@ -64,25 +64,6 @@
                     </div>
                  </div>
                  @endif
-              
-                  {{-- @foreach($posts->skip(1) as $post)
-                  <div class="col-md-3 news   py-2">
-                     <div class="news-wrap">
-                        <a href="/news_kamera/{{ $post->slug }}" class="text-decoration-none text-black">
-                           <div class="image">
-                              <img src="image/phone-108.jpg" alt="" >
-                           </div>
-                           <div class="card-body">
-                              <div class="py-2">
-                                 <h5 style="font-weight: 800;font-size:18px">{{ $post->title }}</h5>
-                                
-                              </div>
-                        
-                           </div>
-                        </a>
-                     </div>
-                  </div>
-                  @endforeach --}}
                </div>
             </div>
             <div class="px-1">
@@ -92,37 +73,24 @@
                      <div class="berita flex" style="height: auto">
                         <div class="contents">
                            <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.3);border-top-left-radius:8px;z-index:999">
-                              <a href="/news?category={{ $post->category->slug }}" class="text-decoration-none text-white">
+                              <a href="/gadget?category={{ $post->category->slug }}" class="text-decoration-none text-white">
                                  {{ $post->category->name }}
                               </a>
                            </div>
                            <div class="image">
-                              <a class="text-decoration-none" href="/show/{{ $post->slug }}">
+                              <a class="text-decoration-none" href="/postGadget/{{ $post->slug }}">
                                  <img src="https://source.unsplash.com/random/200x100/?{{ $post->category->name }}" alt="">
                               </a>
                            </div>
                            <div class="card-body">
                               <h5 class="card-title">{{ $post->title }}</h5>
                               <div class="card-text" style="min-height: 4rem">
-                                 <label style="font-size:0.7em;margin-bottom:5px">By : 
-                                    <a class="text-decoration-none" href="/news?author={{ $post->author->username }}">
-                                       {{ $post->author->name }}
-                                    </a> in
-                                    <a class="text-decoration-none" href="/news?category={{ $post->category->slug }}">
-                                       {{ $post->category->name }}
-                                    </a>
-                                 </label>
-                           
-                                 {{-- <p>
-                                    {{ $post->excerpt }}
-                                 </p> --}}
+                                 <label style="font-size:0.7em;margin-bottom:5px">By : <a class="text-decoration-none" href="/gadget?author={{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/gadget?category={{ $post->category->slug }}">{{ $post->category->name }}</a></label>
                               </div>
                               <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
                                  <h6 style="font-size:9px;font-weight:100">{{ $post->created_at->diffForHumans() }}</h6>
                               </div>
-                              {{-- <a href="/news_kamera/{{ $post->slug }}" class="btn btn-outline-primary icon-link">Read More 
-                                 <span class="bi">&rarr;</span> 
-                              </a> --}}
+                           
                            </div>
                         </div>
                      </div>
@@ -141,13 +109,13 @@
                <h5 class="py-2">Cari Artikel</h5>
                <div class="row">
                   <div class="col-md">
-                     <form action="/news" >
+                     <form action="/gadget" >
                         @if(request('category'))
-                           <input type="hidden" name="category" value="{{ request('category') }}">
-                        @endif
+                           <input type="hidden" name="category" class="form-control" placeholder="Search..." value="{{ request('category') }}">
+                         @endif
                         @if(request('author'))
-                           <input type="hidden" name="author" value="{{ request('author') }}">
-                        @endif
+                           <input type="hidden" name="author" class="form-control" placeholder="Search..." value="{{ request('author') }}">
+                         @endif
                         <input type="search" name="search" id="" class="form-control" placeholder="Search..." value="{{ request('search') }}">
                         <button class="btn btn-outline-primary mt-2 me-auto" type="submit">Search</button>
                      </form>
@@ -159,7 +127,7 @@
                      <div class="row row-cols-2 px-3 py-3">
                         
                         <div class="avatar  d-flex align-items-center text-md-start text-center justify-content-center">
-                           <img class="rounded-circle " width="100%" src="image/pf.jpg" alt="" style="border:1px solid blue">
+                           <img class="rounded-circle " width="100%" src="/image/pf.jpg" alt="" style="border:1px solid blue">
                         </div>
                         <div class="about text-start ">
                            <div><label class=""  for="" style="font-size: 16px">Lukman Budiman</label></div>
@@ -170,7 +138,7 @@
                      <div class="row row-cols-2 pb-3 px-3">
    
                         <div class="avatar  d-flex align-items-center ">
-                           <img class="rounded-circle " width="100%" src="image/RG.gif" alt="" style="border:1px solid blue">
+                           <img class="rounded-circle " width="100%" src="/image/RG.gif" alt="" style="border:1px solid blue">
                         </div>
                         <div class=" about text-start ">
                            <div><label class="" style="font-size: 16px" for="">Review Gadget</label></div>
@@ -189,7 +157,7 @@
                   <div class="bg-light">
                      <div class="py-2">
                         <label for="">Email</label>
-                        <input type="email" value="gmail@lukman.com" disabled class="form-control"> 
+                        <input type="email" value="lukmanbudimantrue@gmail.com" disabled class="form-control"> 
                      </div>
                      <div class="py-2">
                         <label for="">Instagram</label>
@@ -197,33 +165,14 @@
                      </div>
                   </div>
                </div>
-               {{-- <div class="row">
-                  <h5>All Categories</h5>
-                  @foreach ($categories as $category)
-                  <ul>
-                     <li class="">
-                        <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
-                     </li>
-                  </ul>
-                  @endforeach
-               </div> --}}
+  
             </div>
          </div>
       </div>
       
    </div>
 
-   {{-- <div class="container">
-      <div class="sidebar">
-         <div class="col-md-3">
-            <input type="search" name="" id="" value="Search..." class="form-control">
-            <div>
-               <h4>About Me</h4>
-   
-            </div>
-         </div>
-      </div>
-   </div> --}}
+
 </main>
 
 

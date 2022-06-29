@@ -42,6 +42,11 @@ class DatabaseSeeder extends Seeder
             'name'=>'Samsung',
             'slug'=>'samsung'
         ]); 
+        
+        Category::create([
+            'name'=>'Gadget',
+            'slug'=>'gadget'
+        ]); 
 
         
 
@@ -57,8 +62,12 @@ class DatabaseSeeder extends Seeder
             'name'=>'Laptop Axioo',
             'slug'=>'laptop-axioo'
         ]); 
+        Category::create([
+            'name'=>'Tutorial',
+            'slug'=>'tutorial'
+        ]); 
 
-        Post::factory(6)->create();
+        Post::factory(20)->create();
 
         // Post::create([
         //     'title'=>'Judul Pertama',
