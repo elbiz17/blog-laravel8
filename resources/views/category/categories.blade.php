@@ -17,7 +17,7 @@
                <div class="berita p-0 position-relative" style="overflow: hidden">
                   <img class="img-fluid" src="https://source.unsplash.com/random/600x400/?{{ $category->name }}" alt="{{ $category->name }}" alt="">
                      <div class=" card-img-overlay d-flex align-items-center  w-100 p-0" >
-                        <h5  class="text-center flex-fill bg-primary w-1000">
+                        <h5  class="text-center flex-fill p-1" style="background-color:rgba(3, 169, 244, 0.5)">
                            <a class="text-decoration-none text-white" href="/news?category={{ $category->slug }}">{{ $category->name }}</a>
                         </h5>
                      </div>

@@ -14,6 +14,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
+                @if(session('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    {{ session('loginError') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <form action="/login" method="post">
                     @csrf
                     {{-- <div class="pt-2 form-floating">
@@ -26,7 +32,7 @@
                        @enderror
                     </div> --}}
                     <div class="pt-2 form-floating">
-                       <input type="text" name="username" id="username" placeholder="Username" class="form-control @error('username') is-invalid @enderror"> 
+                       <input type="text" name="username" id="username" placeholder="Username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" autofocus required> 
                        <label for="username">Username</label>
                        @error('username')
                        <div class="invalid-feedback">

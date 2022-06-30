@@ -20,7 +20,8 @@ class RouteServiceProvider extends ServiceProvider
 
     protected $namespace = 'App\Http\Controllers';
     
-    public const HOME = '/home';
+    // public const HOME = '/home';
+    public const HOME = '/';
 
     /**
      * The controller namespace for the application.

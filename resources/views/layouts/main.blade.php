@@ -73,6 +73,25 @@
        
                </ul>
                <ul class="navbar-nav ms-auto text-center">
+                  @auth
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Welcome back, {{ auth()->user()->name }}
+                     </a>
+                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <li><a class="dropdown-item" href="/dashboard">
+                           <i class="fa-solid fa-pager"></i> Dashboard </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                           <form action="/logout" method="post">
+                              @csrf
+                              <button type="submit" class="dropdown-item"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+                           </form>
+                        </li>   
+                     </ul>
+                   </li>
+                  @else
                   <li class="nav-item ">
                      <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}">
                         {{-- <i class="fa-solid fa-user "></i> --}}
@@ -81,6 +100,8 @@
                      </a>
                   </li>
                </ul>
+
+               @endauth
           
       
             </div>

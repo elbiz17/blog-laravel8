@@ -290,19 +290,19 @@
       <div class="container py-2">
          <div class="row">
             <div class="text-center  mx-auto" style="z-index :1;background-color:#ffffff;width:220px">
-               <h4 class="text-center" style="z-index: 1;">Berita Teknologi</h4>
+               <h4 class="text-center" style="z-index: 1;">Berita Populer</h4>
             </div>
             <hr class="garis">
             @if ($posts->count())
              <div class="col-md-12">
                  <div class="berita__hero">
                   <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.2);border-top-left-radius:8px;z-index:999">
-                     <a href="/categories/{{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
+                     <a href="/news?category={{ $posts[0]->category->slug }}" class="text-decoration-none text-white" >
                         {{ $posts[0]->category->name }}
                      </a>
                   </div>
                   <div class="image">
-                     <a class="text-decoration-none" href="/news_kamera/{{ $posts[0]->slug }}">
+                     <a class="text-decoration-none" href="/show/{{ $posts[0]->slug }}">
                         <img src="https://source.unsplash.com/random/450x200/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
                      </a>
                   </div>
@@ -311,7 +311,7 @@
                      <h5 class="card-title" style="height: 40px">{{ $posts[0]->title }}</h5>
                      <div class="card-text" style="min-height: 3rem">
                         <label style="font-size:11px;margin-bottom:5px">
-                            <a class="text-decoration-none" href="/authors/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
+                            <a class="text-decoration-none" href="/news?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/news?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
                             <span class="px-2">
                               {{ $posts[0]->created_at->diffForHumans() }}
                            </span>
@@ -325,7 +325,7 @@
                      <div class="card-text text-end p-2" style="bottom:0;right:0;position:absolute">
                         <h6 style="font-size:11px;font-weight:100">{{ $posts[0]->created_at->diffForHumans() }}</h6>
                      </div>
-                     <a href="/news_kamera/{{ $posts[0]->slug }}" class="btn btn-outline-primary icon-link">Read More 
+                     <a href="/show/{{ $posts[0]->slug }}" class="btn btn-outline-primary icon-link">Read More 
                         <span class="bi">&rarr;</span> 
                      </a>
                   </div>
@@ -344,19 +344,19 @@
                   <div class="berita flex" style="height: auto">
                      <div class="contents">
                         <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.3);border-top-left-radius:8px;z-index:999">
-                           <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none text-white">
+                           <a href="/news?category={{ $post->category->slug }}" class="text-decoration-none text-white">
                               {{ $post->category->name }}
                            </a>
                         </div>
                         <div class="image">
-                           <a class="text-decoration-none" href="/news_kamera/{{ $post->slug }}">
+                           <a class="text-decoration-none" href="/show/{{ $post->slug }}">
                               <img src="https://source.unsplash.com/random/320x150/?{{ $post->category->name }}" alt="">
                            </a>
                         </div>
                         <div class="card-body">
                            <h5 class="card-title">{{ $post->title }}</h5>
                            <div class="card-text" style="height:3rem">
-                              <label style="font-size:9px;margin-bottom:5px"><a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></label>
+                              <label style="font-size:9px;margin-bottom:5px"><a class="text-decoration-none" href="/news?author={{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/news?category={{ $post->category->slug }}">{{ $post->category->name }}</a></label>
                         
                               {{-- <p>
                                  {{ $post->excerpt }}
