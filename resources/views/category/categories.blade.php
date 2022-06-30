@@ -13,16 +13,18 @@
             
          @endif
          <div class=" col-md-4 py-2">
-            <a href="/categories/{{ $category->slug }}">
+            <a href="/news?category?={{ $category->slug }}">
                <div class="berita p-0 position-relative" style="overflow: hidden">
                   <img class="img-fluid" src="https://source.unsplash.com/random/600x400/?{{ $category->name }}" alt="{{ $category->name }}" alt="">
-                  <div class="position-absolute top-50 start-50 translate-middle" >
-                     <h5  class="card-title text-center  flex-fill py-2" style="background-color:rgba(0,0,0,0.7);width:auto;min-width:25rem;color:white !important">
-                        <a class="text-decoration-none text-white" href="/news?category={{ $category->slug }}">{{ $category->name }}</a></h5>
-                  </div>
+                     <div class=" card-img-overlay d-flex align-items-center  w-100 p-0" >
+                        <h5  class="text-center flex-fill bg-primary w-1000">
+                           <a class="text-decoration-none text-white" href="/news?category={{ $category->slug }}">{{ $category->name }}</a>
+                        </h5>
+                     </div>
                </div>
             </a>
          </div>
+
 
          {{-- <div class="card bg-dark text-white">
             <img src="..." class="card-img" alt="...">

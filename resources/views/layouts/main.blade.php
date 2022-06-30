@@ -74,7 +74,7 @@
                </ul>
                <ul class="navbar-nav ms-auto text-center">
                   <li class="nav-item ">
-                     <a href="/register" class="nav-link {{ ($active === "login") ? 'active' : '' }}">
+                     <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}">
                         {{-- <i class="fa-solid fa-user "></i> --}}
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Masuk

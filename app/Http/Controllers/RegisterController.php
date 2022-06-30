@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -16,14 +19,32 @@ class RegisterController extends Controller
         // cek requesst
         // return request()->all();
 
-        $request->validate([
-            'name' => 'required|max:50',
+        $message = [
+            'required' => ':attribute wajib diisi',
+            // 'alpha' => ':attribute harus diisi huruf alphabet',
+            'min' => ':attribute harus diisi min :min kata',
+            'max' => ':attribute harus diisi :max kata',
+            'unique' => ':attribute sudah ada',
+            'email' => ':attribute harus lengkap'
+
+
+        ];
+
+       $validatedData = $request->validate([
+            'name' => 'required|alpha|min:3',
             'username' => 'required|min:3|max:50|unique:users',
             'email' => 'required|email:dns|max:30|unique:users',
             'password' => 'required|min:6|max:14'
             
-        ]);
-        dd('registrasi');
+        ], $message);
+
+        // $validatedData['password'] = bcrypt(($validatedData['password']));
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        User::create($validatedData);
+
+        return redirect('/login')->with('status', 'user baru telah ditambahkan');
+
+        // dd('registrasi');
 
 
         // $request->validate([
