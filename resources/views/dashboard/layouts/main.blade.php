@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/trix.css">
+   
     <title>My Dashboard</title>
 
 
@@ -242,6 +244,9 @@
   transition: width 0.4s ease-in-out;
 }
 
+trix-toolbar [data-trix-button-group="file-tools"]{
+  display: none;
+}
 
     </style>
 </head>
@@ -338,6 +343,8 @@
   </div>
 </div>
 
+
+<script src="/js/trix.js"></script>
 <script>
 function myFunction(x) {
   x.classList.toggle("change");
