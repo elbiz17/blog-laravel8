@@ -162,38 +162,42 @@
 
 
 .search-box{
-  width: fit-content;
+  width:min-content;
   height: fit-content;
   position: relative;
+  margin-left: 10px;
+  max-width: 100%;
 }
 .input-search{
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   border-style: none;
+  border: 1px solid white;
   padding: 10px;
-  font-size: 18px;
+  font-size: 12px;
   letter-spacing: 2px;
   outline: none;
   border-radius: 25px;
   transition: all .5s ease-in-out;
-  background-color: #22a6b3;
-  padding-right: 40px;
+  background-color: #1f2023;
+  padding-right: 20px;
   color:#fff;
 }
 .input-search::placeholder{
   color:rgba(255,255,255,.5);
-  font-size: 18px;
+  font-size: 12px;
   letter-spacing: 2px;
   font-weight: 100;
 }
 .btn-search{
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-style: none;
   font-size: 20px;
   font-weight: bold;
   outline: none;
   cursor: pointer;
+  
   border-radius: 50%;
   position: absolute;
   right: 0px;
@@ -202,216 +206,143 @@
   pointer-events: painted;  
 }
 .btn-search:focus ~ .input-search{
-  width: fit-content;
-  border-radius: 0px;
+  width: 200px;
+
+  border: none;
+  border-radius: 20px;
   background-color: transparent;
   border-bottom:1px solid rgba(255,255,255,.5);
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 .input-search:focus{
-  width: fit-content;
-  border-radius: 0px;
+  width: 200px;
+
+
+  border-top: none;
+  border-right: none;
+  border-left: none;
+
+  border-radius: 20px;
   background-color: transparent;
   border-bottom:1px solid rgba(255,255,255,.5);
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
-/* 
-input[type=text] {
-  width: 50px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('searchicon.png');
+
+
+
+.bg-search {
+
+  background-color: rgb(75, 75, 75);
+
   background-position: 10px 10px; 
   background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
+  padding: 12px 0px 12px ;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
-  width: 100%;
-} */
+
     </style>
 </head>
 <body>
-    <header class="navbar navbar-dark sticky-top bg-dark  flex-md-nowrap p-0 shadow align-items-center d-flex" style="background-color: ">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">
-          <img src="/image/logo/logo-1.png" alt=" " style="width: 7em;">
-        </a>
-        <button class="navbar-toggle border-0   d-md-none collapsed bg-dark  collapsed" type="submit" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <div class="container" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-          </div>
-        </button>
-        <div class="col-md w-100">
 
-          
-          <div class="search-box">
-            <button class="btn-search"><i class="bi bi-search"></i></button>
-            <input type="text" class="input-search" placeholder="Type to Search...">
-            
-          </div>
-{{-- 
-          <i class="bi bi-search position-absolute  " style="font-size: 1.4rem"></i>
-          <input class="form-control form-control-dark  rounded border-none" type="text" placeholder="Search" aria-label="Search" > --}}
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow align-items-center d-flex" style="background-color: ">
+    <a class="navbar-brand bg-dark shadow-sm col-md-3 col-lg-2 me-0 px-3" href="/">
+      <img src="/image/logo/logo-1.png" alt=" " style="width: 7em;">
+    </a>
+    <button class="navbar-toggle border-0 bg-dark  d-md-none collapsed   collapsed" type="submit" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </button>
+    <div class="col-md w-100 bg-search" >
+      <div class="search-box ">
+        <button class="btn-search"><i class="bi bi-search"></i></button>
+        <input type="text" class="input-search" placeholder="Type to Search...">
+      </div>
+    </div>
+    <div class="d-flex me-4">
+      <div class="navbar-nav px-2">
+        <div class="nav-item">
+          <a href="" class="nav-link notification pt-3">
+            <span><i class="bi bi-chat-dots" style="font-size:1.2rem"></i></span>
+            <span class="badge">4</span>
+          </a>
         </div>
+      </div>
+      <div class="navbar-nav px-2">
+        <div class="nav-item">
+          <a href="" class="nav-link notification pt-3" >
+            <span><i class="bi bi-bell" style="font-size:1.2rem"></i></span>
+            <span class="badge">3</span>
+          </a>
+        </div>
+      </div>
+      <div class="dropdown d-flex justify-content-center  px-2">    
+
+        <a class="btn text-decoration-none text-white border-0 dropdown-toggle d-flex align-items-center " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="img-fluid rounded-circle" src="/image/users/1-old.jpg" alt="" style="width:2em">
+          <span class="display-8 px-2">
+            {{ auth()->user()->name }}
+          </span>
+          
+          </a>
+
+        <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-md-start " aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="#"><i class="bi bi-person-square"></i> My Profile</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Setting</a></li>
+            <form action="/logout" method="post">
+              @csrf
+              <button type="submit" class="dropdown-item"> <i class="bi bi-box-arrow-right"></i> Logout</button>
+            </form>
+        </ul>
+    </div>
+  </div>
+</header>
+      
+
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse ">
+      <div class="position-sticky" style="padding-top: 2rem">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
+              <span data-feather="home"></span> <i class="bi bi-grid"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
+              <span data-feather="layers"></span>
+              <i class="bi bi-file-text"></i> Post
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     
-        {{--         
-        <div class="navbar-nav">
-          <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="#">
-                <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="dropdown-item"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
-                 </form>
-            </a>
-          </div>
-
-        </div> --}}
+    <main class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
+      @yield('konten')
 
 
-
-      {{-- <div class="container-fluid">
-          
-        <div class="navbar-nav ">
-          <div class="nav-item">
-              <a href="" class="nav-link notification">
-                <span><i class="bi bi-chat-dots"></i></span>
-                <span class="badge">3</span>
-              </a>
-          </div>
-  
-        </div>
-        <div class="navbar-nav ">
-          <div class="nav-item">
-              <a href="" class="nav-link notification">
-                <span><i class="bi bi-bell"></i></span>
-                <span class="badge">3</span>
-              </a>
-          </div>
-  
-        </div>
-          <div class="dropdown d-flex justify-content-center  ">    
-     
-              <a class="btn text-decoration-none text-white border-0 dropdown-toggle d-flex align-items-center " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="img-fluid rounded-circle" src="/image/users/1-old.jpg" alt="" style="width:2em">
-                <span class="display-8 px-2">
-                  {{ auth()->user()->name }}
-                </span>
-                 
-                </a>
-  
-              <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-md-start " aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#"><i class="bi bi-person-square"></i> My Profile</a></li>
-                <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Setting</a></li>
-                  <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="dropdown-item"> <i class="bi bi-box-arrow-right"></i> Logout</button>
-                  </form>
-              </ul>
-          </div>
-      </div> --}}
-
-      <div class="d-flex me-4">
-        <div class="navbar-nav px-2">
-          <div class="nav-item">
-            <a href="" class="nav-link notification pt-3">
-              <span><i class="bi bi-chat-dots" style="font-size:1.2rem"></i></span>
-              <span class="badge">4</span>
-            </a>
-          </div>
-        </div>
-        <div class="navbar-nav px-2">
-          <div class="nav-item">
-            <a href="" class="nav-link notification pt-3" >
-              <span><i class="bi bi-bell" style="font-size:1.2rem"></i></span>
-              <span class="badge">3</span>
-            </a>
-          </div>
-        </div>
-        <div class="dropdown d-flex justify-content-center  px-2">    
-     
-          <a class="btn text-decoration-none text-white border-0 dropdown-toggle d-flex align-items-center " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <img class="img-fluid rounded-circle" src="/image/users/1-old.jpg" alt="" style="width:2em">
-            <span class="display-8 px-2">
-              {{ auth()->user()->name }}
-            </span>
-             
-            </a>
-
-          <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-md-start " aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#"><i class="bi bi-person-square"></i> My Profile</a></li>
-            <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Setting</a></li>
-              <form action="/logout" method="post">
-                @csrf
-                <button type="submit" class="dropdown-item"> <i class="bi bi-box-arrow-right"></i> Logout</button>
-              </form>
-          </ul>
-      </div>
-
-
-     
-      </div>
-
-      </header>
       
-
-
-    <div class="container-fluid">
-        <div class="row">
-          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse ">
-            <div class="position-sticky" style="padding-top: 2rem">
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link " aria-current="page" href="#">
-                    <span data-feather="home"></span> <i class="bi bi-grid"></i>
-                    Dashboard
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span data-feather="layers"></span>
-                    <i class="bi bi-file-text"></i> Post
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
       
-          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-              <h1 class="h2">Dashboard</h1>
-              <div class="btn-toolbar mb-2 mb-md-0">
-                <div class="btn-group me-2">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                </div>
-                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                  <span data-feather="calendar"></span>
-                  This week
-                </button>
-              </div>
-            </div>
       
-           
-    @yield('konten')
-            
-           
-          </main>
-        </div>
-      </div>
+    </main>
+  </div>
+</div>
 
-      <script>
-        function myFunction(x) {
-          x.classList.toggle("change");
-        }
-        </script>
+<script>
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
