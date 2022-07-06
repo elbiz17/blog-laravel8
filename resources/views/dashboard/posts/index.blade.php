@@ -26,6 +26,13 @@
 <main class="main ">
     <div class="table-responsive-sm col-lg-8">
         <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create new post +</a>
+        
+        @if(session('status'))
+        <div class="alert alert-success alert-dismissible fade show">
+            {{ session('status') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <table class="table">
             <thead class="table-dark">
                 <th>No</th>
@@ -42,8 +49,14 @@
                     <td>{{ $post->category->name }}</td>
                     <td>
                         <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info" data-toggle="tooltip" title="Detail"><i class="bi bi-eye"></i></a>
-                        <a href="" class="badge bg-warning" data-toggle="tooltip" title="Edit"><i class="bi bi-pencil-square"></i></a>
-                        <a href="" class="badge bg-danger" data-toggle="tooltip" title="Delete"><i class="bi bi-trash"></i></a>
+                        <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning" data-toggle="tooltip" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                        <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                            @csrf
+                            @method('delete')
+                            <button class="badge bg-danger border-0" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure ?')"><i class="bi bi-trash"></i></button>
+                            {{-- <a href="" class="badge bg-danger" data-toggle="tooltip" title="Delete"><i class="bi bi-trash"></i></a> --}}
+
+                        </form>
                     
                     </td>
                 </tr>

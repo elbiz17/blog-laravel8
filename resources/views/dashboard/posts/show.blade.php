@@ -10,9 +10,15 @@
              <div class="card-header bg-white ">
                 <h1 class="py-2">{{ $post->title }}</h1>
                 <a href="/dashboard/posts" class="btn btn-success"><i class="bi bi-arrow-return-left"></i> Back to all my post</a>
-                <a href="" class="btn btn-warning" data-toggle="tooltip" title="Edit"><i class="bi bi-pencil-square"></i></a>
-                <a href="" class="btn btn-danger" data-toggle="tooltip" title="Delete"><i class="bi bi-trash"></i></a>
+                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn  btn-warning" data-toggle="tooltip" title="Edit"><i class="bi bi-pencil-square"></i></a>
+               
+                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                  @csrf
+                  @method('delete')
+                  <button class="btn btn-danger border-0" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure ?')"><i class="bi bi-trash"></i></button>
+                  {{-- <a href="" class="badge bg-danger" data-toggle="tooltip" title="Delete"><i class="bi bi-trash"></i></a> --}}
 
+              </form>
 
              </div>
              <div class="card-body py-3">
@@ -24,9 +30,10 @@
                    <img src="/image/smartphone/xiaomi/xiaomi-redmi-note-11.png" alt="" width="100%">
                 </div>
                 <p class="py-2">
-                   "Tak hanya sekedar perangkat  mobile,  dengan interaksi peripheral, pengguna dapat memanfaatkan HUAWEI MatePad sebagai PC yang portable. Kolaborasi multi-layar dan lintas perangkat antara tablet dan PC juga menambah nilai tablet ini sebagai perangkat produktivitas yang mumpuni," kata Patrick Ru, Country Head of Huawei CBG Indonesia.
-                   HUAWEI MatePad juga membawa kelebihan di banyak aspek, mulai dari desain minimalis yang menggabungkan ergonomi dan estetika teknologi, layar HUAWEI FullView Display 10,4 inci beresolusi 2K untuk kualitas gambar lebih baik pada berbagai konten, hingga setting suara yang mengagumkan berkat dukungan sistem audio berkualitas dari Harman Kardon.
+                     {!! $post->body !!}
                 </p>
+
+                <a href="/#showKonten" class="btn btn-primary">Back to dashboard</a>
              </div>
           </div>
        </div>

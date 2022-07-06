@@ -287,9 +287,9 @@
          </div>
       </div> --}}
 
-      <div class="container py-2">
+      <div class="container py-2" id="showKonten">
          <div class="row">
-            <div class="text-center  mx-auto" style="z-index :1;background-color:#ffffff;width:220px">
+            <div class="text-center  mx-auto"  style="z-index :1;background-color:#ffffff;width:220px">
                <h4 class="text-center" style="z-index: 1;">Berita Populer</h4>
             </div>
             <hr class="garis">
