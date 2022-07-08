@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\ServiceProvider;
+use App\Models\User;
+Use Illuminate\Support\Facades\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Customization authorize use GATE
+        Gate::define('admin', function(User $user){
+        //   return  $user->username === 'elbiz';
+          return  $user->is_admin;
+        });
     }
 }
