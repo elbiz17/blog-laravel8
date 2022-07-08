@@ -20,10 +20,10 @@
                   <div class="text-center">
                      @if ($post->image)
                      <div style="max-height:350px;max-width:150px;overflow:hidden">
-                        <img src="{{ asset('storage/' . $post->image) }}" alt="" style="width: 100%">
+                        <img class="img-fluid" src="{{ asset('storage/' . $post->image) }}" alt="" style="width: 100%">
                      </div>
                      @else
-                        <img src="https://source.unsplash.com/random/450x200/?{{ $post->category->name }}" alt="{{ $post->category->name }}" style="width:100%">
+                        <img class="img-fluid" src="https://source.unsplash.com/random/450x200/?{{ $post->category->name }}" alt="{{ $post->category->name }}" style="width:100%">
 
                          
                      @endif
