@@ -18,11 +18,18 @@
                      Menyempurnakan fungsinya, HUAWEI MatePad sebagai tablet generasi terbaru yang fungsional dan nyaman untuk menunjang produktivitas. Tablet ini ditenagai oleh sistem operasi HarmonyOS serta berbagai kemampuan dan fitur layaknya laptop yang kian melengkapi fleksibilitas komputasi pada integrasi Smart Office Huawei, termasuk dukungan akan keyboard dan pen yang bisa didapat dalam paket pembelian semasa Pre-Order. Tablet ini akan memasuki pasar Indonesia pada 12 April 2022 mendatang.
                   </p> --}}
                   <div class="text-center">
-                     <img src="/image/smartphone/xiaomi/xiaomi-redmi-note-11.png" alt="" width="100%">
+                     @if ($post->image)
+                     <div style="max-height:350px;max-width:150px;overflow:hidden">
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="" style="width: 100%">
+                     </div>
+                     @else
+                        <img src="https://source.unsplash.com/random/450x200/?{{ $post->category->name }}" alt="{{ $post->category->name }}" style="width:100%">
+
+                         
+                     @endif
                   </div>
                   <p class="py-2">
-                     "Tak hanya sekedar perangkat  mobile,  dengan interaksi peripheral, pengguna dapat memanfaatkan HUAWEI MatePad sebagai PC yang portable. Kolaborasi multi-layar dan lintas perangkat antara tablet dan PC juga menambah nilai tablet ini sebagai perangkat produktivitas yang mumpuni," kata Patrick Ru, Country Head of Huawei CBG Indonesia.
-                     HUAWEI MatePad juga membawa kelebihan di banyak aspek, mulai dari desain minimalis yang menggabungkan ergonomi dan estetika teknologi, layar HUAWEI FullView Display 10,4 inci beresolusi 2K untuk kualitas gambar lebih baik pada berbagai konten, hingga setting suara yang mengagumkan berkat dukungan sistem audio berkualitas dari Harman Kardon.
+                     {!! $post->body !!}
                   </p>
                </div>
             </div>

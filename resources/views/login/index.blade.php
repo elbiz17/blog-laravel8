@@ -3,9 +3,9 @@
 @section('konten')
 
 
-<section class="main vh-100 d-flex align-items-center">
-    <div class="container">
-        <div class="row justify-content-center">
+<section class="main  d-flex align-items-center">
+    <div class="container pt-5">
+        <div class="row justify-content-center mt-5">
             <div class="col-lg-5 col-md-10">
                 <strong class="text-center d-block py-3 fs-4" style="color: #03a9f4">Silahkan Login</strong>
                 @if(session('status'))

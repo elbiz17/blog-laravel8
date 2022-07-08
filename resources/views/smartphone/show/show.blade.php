@@ -21,8 +21,7 @@
                      <img src="/image/smartphone/xiaomi/xiaomi-redmi-note-11.png" alt="" width="100%">
                   </div>
                   <p class="py-2">
-                     "Tak hanya sekedar perangkat  mobile,  dengan interaksi peripheral, pengguna dapat memanfaatkan HUAWEI MatePad sebagai PC yang portable. Kolaborasi multi-layar dan lintas perangkat antara tablet dan PC juga menambah nilai tablet ini sebagai perangkat produktivitas yang mumpuni," kata Patrick Ru, Country Head of Huawei CBG Indonesia.
-                     HUAWEI MatePad juga membawa kelebihan di banyak aspek, mulai dari desain minimalis yang menggabungkan ergonomi dan estetika teknologi, layar HUAWEI FullView Display 10,4 inci beresolusi 2K untuk kualitas gambar lebih baik pada berbagai konten, hingga setting suara yang mengagumkan berkat dukungan sistem audio berkualitas dari Harman Kardon.
+                   {!! $post->body !!}
                   </p>
                </div>
             </div>

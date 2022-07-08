@@ -303,7 +303,15 @@
                   </div>
                   <div class="image">
                      <a class="text-decoration-none" href="/show/{{ $posts[0]->slug }}">
-                        <img src="https://source.unsplash.com/random/450x200/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
+                        @if ($posts[0]->image)
+                        <div style="max-height:350px;overflow:hidden">
+                           <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="" style="width: 100%">
+                        </div>
+                        @else
+                           <img src="https://source.unsplash.com/random/450x200/?{{ $posts[0]->category->name }}" alt="{{ $posts[0]->category->name }}" style="width:100%">
+
+                            
+                        @endif
                      </a>
                   </div>
                     
@@ -350,7 +358,15 @@
                         </div>
                         <div class="image">
                            <a class="text-decoration-none" href="/show/{{ $post->slug }}">
-                              <img src="https://source.unsplash.com/random/320x150/?{{ $post->category->name }}" alt="">
+                              @if ($post->image)
+                              <div style="max-width:320px; max-height:150px;overflow:hidden">
+                                 <img src="{{ asset('storage/' . $post->image) }}" alt="" style="width: 100%">
+                              </div>
+                              @else
+                                 <img src="https://source.unsplash.com/random/320x150/?{{ $post->category->name }}" alt="">
+      
+                                  
+                              @endif
                            </a>
                         </div>
                         <div class="card-body">

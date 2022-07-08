@@ -19,7 +19,7 @@
         <div class="row mb-5">
             <div class="col-lg-8 mb-5">
 
-                <form method="post" action="/dashboard/posts"> 
+                <form method="post" action="/dashboard/posts" enctype="multipart/form-data"> 
                     @csrf
                     <div class="mb-3">
                       <label for="title" class="form-label">Judul</label>
@@ -50,7 +50,16 @@
                             @endif
                           @endforeach               
                       </select>
-                    </div>            
+                    </div>   
+                    <div class="mb-3">
+                      <label for="image" class="form-label">Post Image</label>
+                      <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" required>
+                      @error('image')
+                      <div class="inavlid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
+                    </div>         
                     <div class="mb-3">
                       <label for="body" class="form-label">Body</label>
     

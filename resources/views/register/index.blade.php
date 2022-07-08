@@ -3,10 +3,10 @@
 @section('konten')
 
 
-<section class="main vh-100  align-items-center d-flex">
+<section class="main   align-items-center d-flex">
    <div class="container">
-      <div class="row justify-content-center align-items-center">
-         <div class="col-lg-5 col-md-10 mt-5">
+      <div class="row justify-content-center align-items-center pt-5">
+         <div class="col-lg-5 col-md-10 mt-5 mt-5">
             <strong class="text-center d-block py-3 fs-4" style="color: #03a9f4">Silahkan Registrasi</strong>
             <form action="/register" method="post">
                @csrf
