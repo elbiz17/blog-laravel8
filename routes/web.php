@@ -220,6 +220,15 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 Route::resource('/dashboard/posts', 'DashboardPostController')->middleware('auth');
 
 
+// authorize use middleware
+Route::resource('/dashboard/categories', AdminCategoryController::class )->except('show')->middleware('is_admin');
+
+
+// authorize use gate
+// Route::resource('/dashboard/categories', AdminCategoryController::class )->except('show');
+
+
+
 
 
 
