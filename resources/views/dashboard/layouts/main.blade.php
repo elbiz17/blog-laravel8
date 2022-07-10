@@ -317,7 +317,7 @@ trix-toolbar [data-trix-button-group="file-tools"]{
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
-              <span data-feather="home"></span> <i class="bi bi-grid"></i>
+              <span data-feather="home"></span> <i class="bi bi-house-door"></i>
               Dashboard
             </a>
           </li>
@@ -337,7 +337,7 @@ trix-toolbar [data-trix-button-group="file-tools"]{
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" aria-current="page" href="/dashboard/categories">
-              <span data-feather="home"></span> <i class="bi bi-file-text"></i>
+              <span data-feather="home"></span> <i class="bi bi-grid"></i>
               Post Categories
             </a>
           </li>
