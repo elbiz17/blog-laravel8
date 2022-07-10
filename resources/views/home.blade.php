@@ -348,7 +348,7 @@
      <div class="container">
          <div class="row row-cols-2">
              @foreach ($posts->skip(1) as $post)
-               <div class="col-md-4 py-2">
+               <div class="col-md-4 pt-1">
                   <div class="berita flex" style="height: auto">
                      <div class="contents">
                         <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.3);border-top-left-radius:8px;z-index:999">
