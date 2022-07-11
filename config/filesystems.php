@@ -41,6 +41,16 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        
+        
+        'hosting' =>[
+            'driver'=>'local',
+            'root'=>storage_path() . '/../../public_html'. env
+                ('FOLDER_IN_PUBLIC_HTML') .'/storage',
+            'url'=> env('APP_URL').'/'.env('FOLDER_IN_PUBLIC_HTML') .'/storage',
+            'visibility'=>'public',
+            
+        ],
 
         's3' => [
             'driver' => 's3',
@@ -69,5 +79,9 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
+    
+    // 'links' => [
+    // base_path('public_html/storage') => storage_path('app/public'),
+    // ],
 
 ];
