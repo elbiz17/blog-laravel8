@@ -18,9 +18,16 @@
             <a href="/" class="navbar-brand">
                <img src="/image/logo/logo-1.png" alt=" " style="width: 10em;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> --}}
+            <button class="navbar-toggle border-0  d-lg-none " type="submit" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #03a9f4">
+               <div class="container" onclick="myFunction(this)">
+                 <div class="bar1"></div>
+                 <div class="bar2"></div>
+                 <div class="bar3"></div>
+               </div>
+             </button>
      
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -171,7 +178,11 @@
 
 
 
-
+<script>
+   function myFunction(x) {
+     x.classList.toggle("change");
+   }
+   </script>
 <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 <script src ="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
 <script src="/js/loadMore.js"></script>
