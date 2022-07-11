@@ -326,7 +326,7 @@
                         </label>
                        
                        
-                        <p>
+                        <p class="text-break">
                            {{ $posts[0]->excerpt }}
                         </p>
                      </div>
