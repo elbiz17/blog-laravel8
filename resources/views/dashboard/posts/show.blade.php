@@ -32,7 +32,7 @@
                      <img src="{{ asset('storage/' . $post->image) }}" alt="" style="width: 100%">
                   </div>
                   @else
-                     <img src="https://source.unsplash.com/random/450x200/?{{ $posts[0]->category->name }}" alt="" width="100%">
+                     <img src="https://source.unsplash.com/random/450x200/?{{ $post->category->name }}" alt="" width="100%">
                       
                   @endif
                 </div>

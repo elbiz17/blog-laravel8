@@ -56,16 +56,12 @@
                       <label for="image" class="form-label">Post Image</label>
                       <input type="hidden" name="oldImage" value="{{ $post->image }}">
                       @if ($post->image)
-                      {{-- <div class="img-fluid" style="max-height: 150px; max-width:320px"> --}}
                         <img src="{{ asset('storage/' . $post->image) }}" class="img-preview img-fluid pb-3 d-block" style="max-height: 150px; max-width:320px" alt="{{ $post->image }}">
-
-                      {{-- </div> --}}
-
                       @else
                         <img class="img-preview img-fluid pb-3 " style="max-height: 150px; max-width:320px">
                           
                       @endif
-                      <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"  required onchange="previewImage()">
+                      <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" value="{{ old('image', $post->image) }}" required onchange="previewImage()">
                       @error('image')
                       <div class="inavlid-feedback">
                         {{ $message }}

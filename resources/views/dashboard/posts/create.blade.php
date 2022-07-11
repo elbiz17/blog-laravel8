@@ -54,9 +54,9 @@
                     <div class="mb-3">
                       <label for="image" class="form-label">Post Image</label>
                       <img class="img-preview img-fluid pb-3 " style="max-height: 150px; max-width:320px">
-                      <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"  required onchange="previewImage()">
+                      <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" value="{{ old('image') }}" required onchange="previewImage()">
                       @error('image')
-                      <div class="inavlid-feedback">
+                      <div class="invalid-feedback">
                         {{ $message }}
                       </div>
                       @enderror
