@@ -45,5 +45,10 @@
          </div>
       </div>
    </section>
+   <section class="footer bg-light d-flex align-items-center  text-center justify-content-center p-4">
+      <div class="col-md">
+        <h6>Copyright &copy; <a href="https://www.instagram.com/elbiz17/" class="text-decoration-none">elbiz</a></h6>
+      </div>
+   </section>
 </footer>
 
