@@ -81,27 +81,27 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Dashboard Admin
 
-<a href="https://ibb.co/fDXJ4dJ"><img src="https://i.ibb.co/0sn5hy5/image.png" alt="image" border="0"></a>
+<a href="http://reviewgadget.tech/"><img src="https://i.ibb.co/0sn5hy5/image.png" alt="image" border="0"></a>
 
 ## Dashboard Post Admin
 
-<a href="https://ibb.co/bFpCZtw"><img src="https://i.ibb.co/9hR1LPK/image.png" alt="image" border="0"></a>
+<a href="http://reviewgadget.tech/"><img src="https://i.ibb.co/9hR1LPK/image.png" alt="image" border="0"></a>
 
 ## Dashboard Create Post
 
-<a href="https://ibb.co/GsBTJLc"><img src="https://i.ibb.co/M8W6h4M/image.png" alt="image" border="0"></a>
+<a href="http://reviewgadget.tech/"><img src="https://i.ibb.co/M8W6h4M/image.png" alt="image" border="0"></a>
 
 ## Dashboard Edit Post
 
-<a href="https://ibb.co/85ZrBPm"><img src="https://i.ibb.co/xjT1sz2/image.png" alt="image" border="0"></a>
+<a href="http://reviewgadget.tech/"><img src="https://i.ibb.co/xjT1sz2/image.png" alt="image" border="0"></a>
 
 ## Dashboard Show Post
 
-<a href="https://ibb.co/JkhY3v1"><img src="https://i.ibb.co/dKhNmPT/image.png" alt="image" border="0"></a>
+<a href="http://reviewgadget.tech/"><img src="https://i.ibb.co/dKhNmPT/image.png" alt="image" border="0"></a>
 
 ## Dashboard Delete Post
 
-<a href="https://ibb.co/XYbdscX"><img src="https://i.ibb.co/1zLpqFZ/image.png" alt="image" border="0"></a>
+<a href="http://reviewgadget.tech/"><img src="https://i.ibb.co/1zLpqFZ/image.png" alt="image" border="0"></a>
 
 ## Here is live demo
 
